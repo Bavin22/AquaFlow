@@ -62,67 +62,215 @@ async function request(path, { method = 'GET', body, auth = true } = {}) {
 export const api = {
   // auth
   login: (username, password) =>
-    request('/auth/login', { method: 'POST', body: { username, password }, auth: false }),
-  createUser: (payload) => request('/users', { method: 'POST', body: payload }),
-  listUsers: () => request('/users'),
+    request('/auth/login', {
+      method: 'POST',
+      body: {
+        username,
+        password
+      },
+      auth: false
+    }),
+
+  createUser: (payload) =>
+    request('/users', {
+      method: 'POST',
+      body: payload
+    }),
+
+  listUsers: () =>
+    request('/users'),
 
   // flats / system
-  getFlats: () => request('/flats'),
-  getFlat: (flatId) => request(`/flats/${flatId}`),
-  getSystemStatus: () => request('/system-status'),
-  getSubTanks: () => request('/sub-tanks'),
+  getFlats: () =>
+    request('/flats'),
+
+  getFlat: (flatId) =>
+    request(`/flats/${flatId}`),
+
+  getSystemStatus: () =>
+    request('/system-status'),
+
+  getSubTanks: () =>
+    request('/sub-tanks'),
+
   assignSubTank: (flatId, subTankId) =>
-    request('/sub-tanks/assign', { method: 'POST', body: { flat_id: flatId, sub_tank_id: subTankId } }),
+    request('/sub-tanks/assign', {
+      method: 'POST',
+      body: {
+        flat_id: flatId,
+        sub_tank_id: subTankId
+      }
+    }),
 
   // config
-  getConfig: () => request('/config'),
-  updateConfig: (payload) => request('/config', { method: 'PUT', body: payload }),
-  resetConfig: () => request('/config/reset', { method: 'POST' }),
+  getConfig: () =>
+    request('/config'),
+
+  updateConfig: (payload) =>
+    request('/config', {
+      method: 'PUT',
+      body: payload
+    }),
+
+  resetConfig: () =>
+    request('/config/reset', {
+      method: 'POST'
+    }),
 
   // allocation
-  allocate: () => request('/allocate', { method: 'POST' }),
+  allocate: () =>
+    request('/allocate', {
+      method: 'POST'
+    }),
+
   allocateHierarchical: async () => {
-    const raw = await request('/allocate/hierarchical', { method: 'POST' })
-    // The backend's hierarchical shape is genuinely different (nested per
-    // sub-tank) since that's the real structure of the computation - but
-    // the UI (Flats tab, FlatCard, Last-run-summary) is written once
-    // against the single-tank shape. Flatten here, in one place, so both
-    // allocation modes render identically instead of the hierarchical
-    // button silently updating nothing.
-    const allocations = Object.entries(raw.flat_allocation_by_subtank).flatMap(
-      ([sub_tank_id, sub]) => sub.allocations.map((a) => ({ ...a, sub_tank_id }))
-    )
+    const raw = await request('/allocate/hierarchical', {
+      method: 'POST'
+    })
+
+    // The backend's hierarchical shape is genuinely different
+    // (nested per sub-tank) since that's the real structure of
+    // the computation.
+    //
+    // Flatten here so the UI can use the same allocation shape
+    // for both single-tank and hierarchical allocation.
+
+    const allocations =
+      Object.entries(raw.flat_allocation_by_subtank).flatMap(
+        ([sub_tank_id, sub]) =>
+          sub.allocations.map((a) => ({
+            ...a,
+            sub_tank_id
+          }))
+      )
+
     return {
       ...raw,
+
       allocations,
-      total_allocated_l: Math.round(allocations.reduce((s, a) => s + a.allocated_l, 0) * 100) / 100,
-      total_need_l: Math.round(allocations.reduce((s, a) => s + a.need_l, 0) * 100) / 100,
-      bottleneck: Object.values(raw.flat_allocation_by_subtank).some((s) => s.bottleneck === 'supply')
-        ? 'supply' : 'none',
+
+      total_allocated_l:
+        Math.round(
+          allocations.reduce(
+            (s, a) => s + a.allocated_l,
+            0
+          ) * 100
+        ) / 100,
+
+      total_need_l:
+        Math.round(
+          allocations.reduce(
+            (s, a) => s + a.need_l,
+            0
+          ) * 100
+        ) / 100,
+
+      bottleneck:
+        Object.values(
+          raw.flat_allocation_by_subtank
+        ).some(
+          (s) => s.bottleneck === 'supply'
+        )
+          ? 'supply'
+          : 'none',
+
       status: raw.master_status,
-      jains_fairness_index: jainsFairnessIndex(allocations),
-      gini_coefficient: giniCoefficient(allocations),
+
+      jains_fairness_index:
+        jainsFairnessIndex(allocations),
+
+      gini_coefficient:
+        giniCoefficient(allocations),
     }
   },
-  getAllocationLog: (flatId) =>
-    request(`/allocation-log${flatId ? `?flat_id=${encodeURIComponent(flatId)}` : ''}`),
-  triggerCrisis: () => request('/crisis/trigger', { method: 'POST' }),
-  resetCrisis: () => request('/crisis/reset', { method: 'POST' }),
 
-  // emergency requests
+  getAllocationLog: (flatId) =>
+    request(
+      `/allocation-log${
+        flatId
+          ? `?flat_id=${encodeURIComponent(flatId)}`
+          : ''
+      }`
+    ),
+
+  // =====================================================
+  // WATER SUPPLY
+  // =====================================================
+
+  addWater: async (amount_l) => {
+    console.log("API ADD WATER:", amount_l)
+
+    const result = await request('/water/add', {
+      method: 'POST',
+      body: {
+        amount_l
+      }
+    })
+
+    console.log("API RESPONSE:", result)
+
+    return result
+  },
+
+  // =====================================================
+  // CRISIS
+  // =====================================================
+
+  triggerCrisis: () =>
+    request('/crisis/trigger', {
+      method: 'POST'
+    }),
+
+  resetCrisis: () =>
+    request('/crisis/reset', {
+      method: 'POST'
+    }),
+
+  // =====================================================
+  // EMERGENCY REQUESTS
+  // =====================================================
+
   createEmergencyRequest: (payload) =>
-    request('/emergency-requests', { method: 'POST', body: payload }),
+    request('/emergency-requests', {
+      method: 'POST',
+      body: payload
+    }),
+
   listEmergencyRequests: (status, flatId) => {
     const params = new URLSearchParams()
-    if (status) params.set('status', status)
-    if (flatId) params.set('flat_id', flatId)
+
+    if (status) {
+      params.set('status', status)
+    }
+
+    if (flatId) {
+      params.set('flat_id', flatId)
+    }
+
     const qs = params.toString()
-    return request(`/emergency-requests${qs ? `?${qs}` : ''}`)
+
+    return request(
+      `/emergency-requests${
+        qs ? `?${qs}` : ''
+      }`
+    )
   },
+
   approveEmergencyRequest: (id) =>
-    request(`/emergency-requests/${id}/approve`, { method: 'POST' }),
+    request(
+      `/emergency-requests/${id}/approve`,
+      {
+        method: 'POST'
+      }
+    ),
+
   rejectEmergencyRequest: (id) =>
-    request(`/emergency-requests/${id}/reject`, { method: 'POST' }),
+    request(
+      `/emergency-requests/${id}/reject`,
+      {
+        method: 'POST'
+      }
+    ),
 }
 
 export { BASE_URL }

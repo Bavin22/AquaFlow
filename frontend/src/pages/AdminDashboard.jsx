@@ -29,6 +29,15 @@ export default function AdminDashboard({ user }) {
   const [notice, setNotice] = useState('')
   const [busy, setBusy] = useState(false)
 
+  const totalRequirement = flats.reduce((total, flat) => {
+    const tankLevel = Number(flat.tank_level_pct || 0)
+    const capacity = Number(flat.tank_capacity_l || 0)
+
+    const need = Math.max(0, 100 - tankLevel) / 100 * capacity
+
+    return total + need
+  }, 0)
+
   const load = useCallback(async () => {
     setError('')
     try {
@@ -84,11 +93,32 @@ export default function AdminDashboard({ user }) {
 
       {tab === 'overview' && status && (
         <OverviewTab
-          status={status} allocResult={allocResult} busy={busy}
-          onTrigger={() => runAction(api.triggerCrisis, 'Crisis triggered — supply halved.')}
-          onReset={() => runAction(api.resetCrisis, 'Supply restored to normal.')}
-          onAllocate={() => runAction(api.allocate, 'Allocation cycle complete.')}
-          onAllocateHierarchical={() => runAction(api.allocateHierarchical, 'Hierarchical allocation complete.')}
+          status={status}
+          totalRequirement={totalRequirement}
+          allocResult={allocResult}
+          busy={busy}
+
+          onAddWater={(amount) =>
+            runAction(
+              () => api.addWater(amount),
+              `${amount}L water added to the tank.`
+            )
+          }
+          onTrigger={() =>
+            runAction(api.triggerCrisis, 'Crisis triggered.')
+          }
+          onReset={() =>
+            runAction(api.resetCrisis, 'Supply restored to normal.')
+          }
+          onAllocate={() =>
+            runAction(api.allocate, 'Allocation cycle complete.')
+          }
+          onAllocateHierarchical={() =>
+            runAction(
+              api.allocateHierarchical,
+              'Hierarchical allocation complete.'
+            )
+          }
         />
       )}
 
@@ -132,10 +162,17 @@ export default function AdminDashboard({ user }) {
   )
 }
 
-function OverviewTab({ status, allocResult, busy, onTrigger, onReset, onAllocate, onAllocateHierarchical }) {
+function OverviewTab({ status, totalRequirement, allocResult, busy, onAddWater, onTrigger, onReset, onAllocate, onAllocateHierarchical }) {
+  const [waterAmount, setWaterAmount] = useState('')
   return (
     <div>
       <div className="grid cols-4" style={{ marginBottom: 16 }}>
+        <div className="metric">
+          <p className="metric-label">Total Requirement</p>
+          <p className="metric-value">
+            {totalRequirement.toFixed(2)}L
+          </p>
+        </div>
         <div className="metric">
           <p className="metric-label">Supply</p>
           <p className={`metric-value ${status.status === 'crisis' ? 'crisis' : 'accent'}`}>{status.available_supply_l}L</p>
@@ -154,6 +191,57 @@ function OverviewTab({ status, allocResult, busy, onTrigger, onReset, onAllocate
             <p className="metric-value accent">{allocResult.jains_fairness_index}</p>
           </div>
         )}
+      </div>
+
+      <div className="card" style={{ marginBottom: 16 }}>
+        <p className="card-title">Add Water to Tank</p>
+
+        <p className="card-sub">
+          Enter the amount of water to add to the master tank.
+        </p>
+
+        <div
+          style={{
+            display: 'flex',
+            gap: 12,
+            alignItems: 'flex-end',
+            flexWrap: 'wrap'
+          }}
+        >
+          <div className="field" style={{ minWidth: 220 }}>
+            <label htmlFor="water-amount">
+              Amount of water (L)
+            </label>
+
+            <input
+              id="water-amount"
+              type="number"
+              min="1"
+              step="100"
+              value={waterAmount}
+              onChange={(e) => setWaterAmount(e.target.value)}
+              placeholder="Enter amount"
+            />
+          </div>
+
+          <button
+            className="btn primary"
+            disabled={
+              busy ||
+              !waterAmount ||
+              Number(waterAmount) <= 0
+            }
+            onClick={async () => {
+              const amount = Number(waterAmount)
+
+              await onAddWater(amount)
+
+              setWaterAmount('')
+            }}
+          >
+            Add Water
+          </button>
+        </div>
       </div>
 
       <div className="card" style={{ marginBottom: 16 }}>

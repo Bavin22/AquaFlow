@@ -28,17 +28,17 @@ uvicorn main:app --reload
 ## Test it
 
 ```bash
-curl http://127.0.0.1:8000/flats
-curl http://127.0.0.1:8000/system-status
-curl -X POST http://127.0.0.1:8000/allocate
-curl http://127.0.0.1:8000/allocation-log
+curl.exe http://127.0.0.1:8000/flats
+curl.exe http://127.0.0.1:8000/system-status
+curl.exe -X POST http://127.0.0.1:8000/allocate
+curl.exe http://127.0.0.1:8000/allocation-log
 
 # Demo flow: trigger crisis, re-run allocation, watch it reshuffle
-curl -X POST http://127.0.0.1:8000/crisis/trigger
-curl -X POST http://127.0.0.1:8000/allocate
+curl.exe -X POST http://127.0.0.1:8000/crisis/trigger
+curl.exe -X POST http://127.0.0.1:8000/allocate
 
 # Reset for the next demo run
-curl -X POST http://127.0.0.1:8000/crisis/reset
+curl.exe -X POST http://127.0.0.1:8000/crisis/reset
 ```
 
 ## Files

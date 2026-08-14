@@ -1,0 +1,3474 @@
+{
+  "flats": [
+    {
+      "flat_id": "F1",
+      "name": "Flat 102",
+      "trust_score": 0.22,
+      "tank_level_pct": 59,
+      "tank_capacity_l": 600,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 1,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 292
+        },
+        {
+          "day": "Tue",
+          "used_l": 271
+        },
+        {
+          "day": "Wed",
+          "used_l": 280
+        },
+        {
+          "day": "Thu",
+          "used_l": 278
+        },
+        {
+          "day": "Fri",
+          "used_l": 296
+        }
+      ]
+    },
+    {
+      "flat_id": "F2",
+      "name": "Flat 106",
+      "trust_score": 0.44,
+      "tank_level_pct": 52,
+      "tank_capacity_l": 550,
+      "medical_flag": true,
+      "household_size": 4,
+      "children_count": 2,
+      "elderly_count": 1,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 560
+        },
+        {
+          "day": "Tue",
+          "used_l": 574
+        },
+        {
+          "day": "Wed",
+          "used_l": 521
+        },
+        {
+          "day": "Thu",
+          "used_l": 543
+        },
+        {
+          "day": "Fri",
+          "used_l": 517
+        }
+      ]
+    },
+    {
+      "flat_id": "F3",
+      "name": "Flat 107",
+      "trust_score": 0.53,
+      "tank_level_pct": 63,
+      "tank_capacity_l": 450,
+      "medical_flag": false,
+      "household_size": 7,
+      "children_count": 2,
+      "elderly_count": 1,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 1050
+        },
+        {
+          "day": "Tue",
+          "used_l": 1088
+        },
+        {
+          "day": "Wed",
+          "used_l": 1025
+        },
+        {
+          "day": "Thu",
+          "used_l": 1048
+        },
+        {
+          "day": "Fri",
+          "used_l": 1106
+        }
+      ]
+    },
+    {
+      "flat_id": "F4",
+      "name": "Flat 110",
+      "trust_score": 0.55,
+      "tank_level_pct": 52,
+      "tank_capacity_l": 350,
+      "medical_flag": false,
+      "household_size": 7,
+      "children_count": 2,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 1120
+        },
+        {
+          "day": "Tue",
+          "used_l": 1077
+        },
+        {
+          "day": "Wed",
+          "used_l": 1126
+        },
+        {
+          "day": "Thu",
+          "used_l": 1155
+        },
+        {
+          "day": "Fri",
+          "used_l": 1048
+        }
+      ]
+    },
+    {
+      "flat_id": "F5",
+      "name": "Flat 120",
+      "trust_score": 0.83,
+      "tank_level_pct": 8,
+      "tank_capacity_l": 500,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 1,
+      "elderly_count": 1,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 270
+        },
+        {
+          "day": "Tue",
+          "used_l": 267
+        },
+        {
+          "day": "Wed",
+          "used_l": 256
+        },
+        {
+          "day": "Thu",
+          "used_l": 250
+        },
+        {
+          "day": "Fri",
+          "used_l": 275
+        }
+      ]
+    },
+    {
+      "flat_id": "F6",
+      "name": "Flat 125",
+      "trust_score": 0.93,
+      "tank_level_pct": 38,
+      "tank_capacity_l": 350,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 1,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 282
+        },
+        {
+          "day": "Tue",
+          "used_l": 273
+        },
+        {
+          "day": "Wed",
+          "used_l": 274
+        },
+        {
+          "day": "Thu",
+          "used_l": 299
+        },
+        {
+          "day": "Fri",
+          "used_l": 291
+        }
+      ]
+    },
+    {
+      "flat_id": "F7",
+      "name": "Flat 127",
+      "trust_score": 0.31,
+      "tank_level_pct": 85,
+      "tank_capacity_l": 350,
+      "medical_flag": true,
+      "household_size": 6,
+      "children_count": 0,
+      "elderly_count": 2,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 1062
+        },
+        {
+          "day": "Tue",
+          "used_l": 1052
+        },
+        {
+          "day": "Wed",
+          "used_l": 1029
+        },
+        {
+          "day": "Thu",
+          "used_l": 1082
+        },
+        {
+          "day": "Fri",
+          "used_l": 1009
+        }
+      ]
+    },
+    {
+      "flat_id": "F8",
+      "name": "Flat 132",
+      "trust_score": 0.53,
+      "tank_level_pct": 35,
+      "tank_capacity_l": 450,
+      "medical_flag": false,
+      "household_size": 3,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 542
+        },
+        {
+          "day": "Tue",
+          "used_l": 560
+        },
+        {
+          "day": "Wed",
+          "used_l": 547
+        },
+        {
+          "day": "Thu",
+          "used_l": 562
+        },
+        {
+          "day": "Fri",
+          "used_l": 544
+        }
+      ]
+    },
+    {
+      "flat_id": "F9",
+      "name": "Flat 133",
+      "trust_score": 0.71,
+      "tank_level_pct": 90,
+      "tank_capacity_l": 350,
+      "medical_flag": true,
+      "household_size": 7,
+      "children_count": 4,
+      "elderly_count": 2,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 939
+        },
+        {
+          "day": "Tue",
+          "used_l": 866
+        },
+        {
+          "day": "Wed",
+          "used_l": 886
+        },
+        {
+          "day": "Thu",
+          "used_l": 893
+        },
+        {
+          "day": "Fri",
+          "used_l": 870
+        }
+      ]
+    },
+    {
+      "flat_id": "F10",
+      "name": "Flat 135",
+      "trust_score": 0.29,
+      "tank_level_pct": 82,
+      "tank_capacity_l": 500,
+      "medical_flag": false,
+      "household_size": 5,
+      "children_count": 4,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 591
+        },
+        {
+          "day": "Tue",
+          "used_l": 582
+        },
+        {
+          "day": "Wed",
+          "used_l": 595
+        },
+        {
+          "day": "Thu",
+          "used_l": 621
+        },
+        {
+          "day": "Fri",
+          "used_l": 601
+        }
+      ]
+    },
+    {
+      "flat_id": "F11",
+      "name": "Flat 138",
+      "trust_score": 0.66,
+      "tank_level_pct": 45,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 3,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 531
+        },
+        {
+          "day": "Tue",
+          "used_l": 520
+        },
+        {
+          "day": "Wed",
+          "used_l": 524
+        },
+        {
+          "day": "Thu",
+          "used_l": 567
+        },
+        {
+          "day": "Fri",
+          "used_l": 549
+        }
+      ]
+    },
+    {
+      "flat_id": "F12",
+      "name": "Flat 139",
+      "trust_score": 0.9,
+      "tank_level_pct": 65,
+      "tank_capacity_l": 600,
+      "medical_flag": false,
+      "household_size": 4,
+      "children_count": 2,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 582
+        },
+        {
+          "day": "Tue",
+          "used_l": 552
+        },
+        {
+          "day": "Wed",
+          "used_l": 591
+        },
+        {
+          "day": "Thu",
+          "used_l": 552
+        },
+        {
+          "day": "Fri",
+          "used_l": 567
+        }
+      ]
+    },
+    {
+      "flat_id": "F13",
+      "name": "Flat 143",
+      "trust_score": 0.59,
+      "tank_level_pct": 27,
+      "tank_capacity_l": 500,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 1,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 304
+        },
+        {
+          "day": "Tue",
+          "used_l": 292
+        },
+        {
+          "day": "Wed",
+          "used_l": 289
+        },
+        {
+          "day": "Thu",
+          "used_l": 294
+        },
+        {
+          "day": "Fri",
+          "used_l": 299
+        }
+      ]
+    },
+    {
+      "flat_id": "F14",
+      "name": "Flat 147",
+      "trust_score": 0.3,
+      "tank_level_pct": 86,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 5,
+      "children_count": 4,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 631
+        },
+        {
+          "day": "Tue",
+          "used_l": 591
+        },
+        {
+          "day": "Wed",
+          "used_l": 577
+        },
+        {
+          "day": "Thu",
+          "used_l": 597
+        },
+        {
+          "day": "Fri",
+          "used_l": 594
+        }
+      ]
+    },
+    {
+      "flat_id": "F15",
+      "name": "Flat 149",
+      "trust_score": 0.42,
+      "tank_level_pct": 75,
+      "tank_capacity_l": 500,
+      "medical_flag": false,
+      "household_size": 1,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 173
+        },
+        {
+          "day": "Tue",
+          "used_l": 189
+        },
+        {
+          "day": "Wed",
+          "used_l": 188
+        },
+        {
+          "day": "Thu",
+          "used_l": 176
+        },
+        {
+          "day": "Fri",
+          "used_l": 183
+        }
+      ]
+    },
+    {
+      "flat_id": "F16",
+      "name": "Flat 152",
+      "trust_score": 0.3,
+      "tank_level_pct": 87,
+      "tank_capacity_l": 400,
+      "medical_flag": true,
+      "household_size": 3,
+      "children_count": 1,
+      "elderly_count": 1,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 435
+        },
+        {
+          "day": "Tue",
+          "used_l": 462
+        },
+        {
+          "day": "Wed",
+          "used_l": 438
+        },
+        {
+          "day": "Thu",
+          "used_l": 428
+        },
+        {
+          "day": "Fri",
+          "used_l": 427
+        }
+      ]
+    },
+    {
+      "flat_id": "F17",
+      "name": "Flat 156",
+      "trust_score": 0.38,
+      "tank_level_pct": 37,
+      "tank_capacity_l": 600,
+      "medical_flag": false,
+      "household_size": 4,
+      "children_count": 2,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 579
+        },
+        {
+          "day": "Tue",
+          "used_l": 559
+        },
+        {
+          "day": "Wed",
+          "used_l": 581
+        },
+        {
+          "day": "Thu",
+          "used_l": 602
+        },
+        {
+          "day": "Fri",
+          "used_l": 568
+        }
+      ]
+    },
+    {
+      "flat_id": "F18",
+      "name": "Flat 166",
+      "trust_score": 0.89,
+      "tank_level_pct": 25,
+      "tank_capacity_l": 400,
+      "medical_flag": false,
+      "household_size": 7,
+      "children_count": 4,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 937
+        },
+        {
+          "day": "Tue",
+          "used_l": 1028
+        },
+        {
+          "day": "Wed",
+          "used_l": 971
+        },
+        {
+          "day": "Thu",
+          "used_l": 923
+        },
+        {
+          "day": "Fri",
+          "used_l": 917
+        }
+      ]
+    },
+    {
+      "flat_id": "F19",
+      "name": "Flat 167",
+      "trust_score": 0.23,
+      "tank_level_pct": 48,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 7,
+      "children_count": 5,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 856
+        },
+        {
+          "day": "Tue",
+          "used_l": 912
+        },
+        {
+          "day": "Wed",
+          "used_l": 930
+        },
+        {
+          "day": "Thu",
+          "used_l": 890
+        },
+        {
+          "day": "Fri",
+          "used_l": 851
+        }
+      ]
+    },
+    {
+      "flat_id": "F20",
+      "name": "Flat 174",
+      "trust_score": 0.93,
+      "tank_level_pct": 39,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 7,
+      "children_count": 0,
+      "elderly_count": 4,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 1133
+        },
+        {
+          "day": "Tue",
+          "used_l": 1218
+        },
+        {
+          "day": "Wed",
+          "used_l": 1154
+        },
+        {
+          "day": "Thu",
+          "used_l": 1215
+        },
+        {
+          "day": "Fri",
+          "used_l": 1200
+        }
+      ]
+    },
+    {
+      "flat_id": "F21",
+      "name": "Flat 178",
+      "trust_score": 0.5,
+      "tank_level_pct": 58,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 0,
+      "elderly_count": 1,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 313
+        },
+        {
+          "day": "Tue",
+          "used_l": 341
+        },
+        {
+          "day": "Wed",
+          "used_l": 340
+        },
+        {
+          "day": "Thu",
+          "used_l": 334
+        },
+        {
+          "day": "Fri",
+          "used_l": 323
+        }
+      ]
+    },
+    {
+      "flat_id": "F22",
+      "name": "Flat 186",
+      "trust_score": 0.47,
+      "tank_level_pct": 40,
+      "tank_capacity_l": 500,
+      "medical_flag": false,
+      "household_size": 6,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 1096
+        },
+        {
+          "day": "Tue",
+          "used_l": 1028
+        },
+        {
+          "day": "Wed",
+          "used_l": 1070
+        },
+        {
+          "day": "Thu",
+          "used_l": 1072
+        },
+        {
+          "day": "Fri",
+          "used_l": 1137
+        }
+      ]
+    },
+    {
+      "flat_id": "F23",
+      "name": "Flat 187",
+      "trust_score": 0.63,
+      "tank_level_pct": 29,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 1,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 188
+        },
+        {
+          "day": "Tue",
+          "used_l": 175
+        },
+        {
+          "day": "Wed",
+          "used_l": 180
+        },
+        {
+          "day": "Thu",
+          "used_l": 173
+        },
+        {
+          "day": "Fri",
+          "used_l": 189
+        }
+      ]
+    },
+    {
+      "flat_id": "F24",
+      "name": "Flat 189",
+      "trust_score": 0.83,
+      "tank_level_pct": 21,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 5,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 938
+        },
+        {
+          "day": "Tue",
+          "used_l": 877
+        },
+        {
+          "day": "Wed",
+          "used_l": 913
+        },
+        {
+          "day": "Thu",
+          "used_l": 910
+        },
+        {
+          "day": "Fri",
+          "used_l": 861
+        }
+      ]
+    },
+    {
+      "flat_id": "F25",
+      "name": "Flat 190",
+      "trust_score": 0.98,
+      "tank_level_pct": 73,
+      "tank_capacity_l": 350,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 1,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 297
+        },
+        {
+          "day": "Tue",
+          "used_l": 289
+        },
+        {
+          "day": "Wed",
+          "used_l": 297
+        },
+        {
+          "day": "Thu",
+          "used_l": 288
+        },
+        {
+          "day": "Fri",
+          "used_l": 270
+        }
+      ]
+    },
+    {
+      "flat_id": "F26",
+      "name": "Flat 192",
+      "trust_score": 0.58,
+      "tank_level_pct": 22,
+      "tank_capacity_l": 350,
+      "medical_flag": false,
+      "household_size": 7,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 1231
+        },
+        {
+          "day": "Tue",
+          "used_l": 1185
+        },
+        {
+          "day": "Wed",
+          "used_l": 1322
+        },
+        {
+          "day": "Thu",
+          "used_l": 1315
+        },
+        {
+          "day": "Fri",
+          "used_l": 1308
+        }
+      ]
+    },
+    {
+      "flat_id": "F27",
+      "name": "Flat 197",
+      "trust_score": 0.38,
+      "tank_level_pct": 41,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 7,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 1229
+        },
+        {
+          "day": "Tue",
+          "used_l": 1191
+        },
+        {
+          "day": "Wed",
+          "used_l": 1315
+        },
+        {
+          "day": "Thu",
+          "used_l": 1325
+        },
+        {
+          "day": "Fri",
+          "used_l": 1195
+        }
+      ]
+    },
+    {
+      "flat_id": "F28",
+      "name": "Flat 200",
+      "trust_score": 0.97,
+      "tank_level_pct": 71,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 5,
+      "children_count": 1,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 825
+        },
+        {
+          "day": "Tue",
+          "used_l": 784
+        },
+        {
+          "day": "Wed",
+          "used_l": 852
+        },
+        {
+          "day": "Thu",
+          "used_l": 853
+        },
+        {
+          "day": "Fri",
+          "used_l": 790
+        }
+      ]
+    },
+    {
+      "flat_id": "F29",
+      "name": "Flat 201",
+      "trust_score": 0.32,
+      "tank_level_pct": 21,
+      "tank_capacity_l": 350,
+      "medical_flag": false,
+      "household_size": 5,
+      "children_count": 4,
+      "elderly_count": 1,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 582
+        },
+        {
+          "day": "Tue",
+          "used_l": 587
+        },
+        {
+          "day": "Wed",
+          "used_l": 567
+        },
+        {
+          "day": "Thu",
+          "used_l": 610
+        },
+        {
+          "day": "Fri",
+          "used_l": 578
+        }
+      ]
+    },
+    {
+      "flat_id": "F30",
+      "name": "Flat 204",
+      "trust_score": 0.52,
+      "tank_level_pct": 94,
+      "tank_capacity_l": 500,
+      "medical_flag": false,
+      "household_size": 3,
+      "children_count": 2,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 382
+        },
+        {
+          "day": "Tue",
+          "used_l": 397
+        },
+        {
+          "day": "Wed",
+          "used_l": 406
+        },
+        {
+          "day": "Thu",
+          "used_l": 381
+        },
+        {
+          "day": "Fri",
+          "used_l": 386
+        }
+      ]
+    },
+    {
+      "flat_id": "F31",
+      "name": "Flat 206",
+      "trust_score": 0.68,
+      "tank_level_pct": 9,
+      "tank_capacity_l": 450,
+      "medical_flag": false,
+      "household_size": 6,
+      "children_count": 2,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 990
+        },
+        {
+          "day": "Tue",
+          "used_l": 951
+        },
+        {
+          "day": "Wed",
+          "used_l": 927
+        },
+        {
+          "day": "Thu",
+          "used_l": 936
+        },
+        {
+          "day": "Fri",
+          "used_l": 892
+        }
+      ]
+    },
+    {
+      "flat_id": "F32",
+      "name": "Flat 207",
+      "trust_score": 0.77,
+      "tank_level_pct": 89,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 6,
+      "children_count": 3,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 834
+        },
+        {
+          "day": "Tue",
+          "used_l": 846
+        },
+        {
+          "day": "Wed",
+          "used_l": 871
+        },
+        {
+          "day": "Thu",
+          "used_l": 834
+        },
+        {
+          "day": "Fri",
+          "used_l": 833
+        }
+      ]
+    },
+    {
+      "flat_id": "F33",
+      "name": "Flat 208",
+      "trust_score": 0.77,
+      "tank_level_pct": 37,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 1,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 170
+        },
+        {
+          "day": "Tue",
+          "used_l": 182
+        },
+        {
+          "day": "Wed",
+          "used_l": 174
+        },
+        {
+          "day": "Thu",
+          "used_l": 188
+        },
+        {
+          "day": "Fri",
+          "used_l": 187
+        }
+      ]
+    },
+    {
+      "flat_id": "F34",
+      "name": "Flat 214",
+      "trust_score": 0.95,
+      "tank_level_pct": 91,
+      "tank_capacity_l": 600,
+      "medical_flag": true,
+      "household_size": 4,
+      "children_count": 2,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 545
+        },
+        {
+          "day": "Tue",
+          "used_l": 557
+        },
+        {
+          "day": "Wed",
+          "used_l": 587
+        },
+        {
+          "day": "Thu",
+          "used_l": 555
+        },
+        {
+          "day": "Fri",
+          "used_l": 550
+        }
+      ]
+    },
+    {
+      "flat_id": "F35",
+      "name": "Flat 216",
+      "trust_score": 0.57,
+      "tank_level_pct": 61,
+      "tank_capacity_l": 600,
+      "medical_flag": true,
+      "household_size": 3,
+      "children_count": 0,
+      "elderly_count": 3,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 482
+        },
+        {
+          "day": "Tue",
+          "used_l": 462
+        },
+        {
+          "day": "Wed",
+          "used_l": 457
+        },
+        {
+          "day": "Thu",
+          "used_l": 474
+        },
+        {
+          "day": "Fri",
+          "used_l": 475
+        }
+      ]
+    },
+    {
+      "flat_id": "F36",
+      "name": "Flat 221",
+      "trust_score": 0.44,
+      "tank_level_pct": 50,
+      "tank_capacity_l": 350,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 346
+        },
+        {
+          "day": "Tue",
+          "used_l": 342
+        },
+        {
+          "day": "Wed",
+          "used_l": 356
+        },
+        {
+          "day": "Thu",
+          "used_l": 356
+        },
+        {
+          "day": "Fri",
+          "used_l": 358
+        }
+      ]
+    },
+    {
+      "flat_id": "F37",
+      "name": "Flat 224",
+      "trust_score": 0.21,
+      "tank_level_pct": 21,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 3,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 554
+        },
+        {
+          "day": "Tue",
+          "used_l": 550
+        },
+        {
+          "day": "Wed",
+          "used_l": 570
+        },
+        {
+          "day": "Thu",
+          "used_l": 513
+        },
+        {
+          "day": "Fri",
+          "used_l": 533
+        }
+      ]
+    },
+    {
+      "flat_id": "F38",
+      "name": "Flat 232",
+      "trust_score": 0.65,
+      "tank_level_pct": 56,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 6,
+      "children_count": 5,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 705
+        },
+        {
+          "day": "Tue",
+          "used_l": 750
+        },
+        {
+          "day": "Wed",
+          "used_l": 697
+        },
+        {
+          "day": "Thu",
+          "used_l": 692
+        },
+        {
+          "day": "Fri",
+          "used_l": 714
+        }
+      ]
+    },
+    {
+      "flat_id": "F39",
+      "name": "Flat 233",
+      "trust_score": 0.31,
+      "tank_level_pct": 56,
+      "tank_capacity_l": 600,
+      "medical_flag": false,
+      "household_size": 1,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 178
+        },
+        {
+          "day": "Tue",
+          "used_l": 175
+        },
+        {
+          "day": "Wed",
+          "used_l": 174
+        },
+        {
+          "day": "Thu",
+          "used_l": 189
+        },
+        {
+          "day": "Fri",
+          "used_l": 178
+        }
+      ]
+    },
+    {
+      "flat_id": "F40",
+      "name": "Flat 234",
+      "trust_score": 0.23,
+      "tank_level_pct": 59,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 6,
+      "children_count": 2,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 975
+        },
+        {
+          "day": "Tue",
+          "used_l": 940
+        },
+        {
+          "day": "Wed",
+          "used_l": 884
+        },
+        {
+          "day": "Thu",
+          "used_l": 990
+        },
+        {
+          "day": "Fri",
+          "used_l": 972
+        }
+      ]
+    },
+    {
+      "flat_id": "F41",
+      "name": "Flat 235",
+      "trust_score": 0.91,
+      "tank_level_pct": 88,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 1,
+      "elderly_count": 1,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 275
+        },
+        {
+          "day": "Tue",
+          "used_l": 274
+        },
+        {
+          "day": "Wed",
+          "used_l": 271
+        },
+        {
+          "day": "Thu",
+          "used_l": 250
+        },
+        {
+          "day": "Fri",
+          "used_l": 260
+        }
+      ]
+    },
+    {
+      "flat_id": "F42",
+      "name": "Flat 239",
+      "trust_score": 0.45,
+      "tank_level_pct": 36,
+      "tank_capacity_l": 450,
+      "medical_flag": false,
+      "household_size": 1,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 173
+        },
+        {
+          "day": "Tue",
+          "used_l": 178
+        },
+        {
+          "day": "Wed",
+          "used_l": 170
+        },
+        {
+          "day": "Thu",
+          "used_l": 177
+        },
+        {
+          "day": "Fri",
+          "used_l": 190
+        }
+      ]
+    },
+    {
+      "flat_id": "F43",
+      "name": "Flat 240",
+      "trust_score": 0.28,
+      "tank_level_pct": 65,
+      "tank_capacity_l": 400,
+      "medical_flag": false,
+      "household_size": 1,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 175
+        },
+        {
+          "day": "Tue",
+          "used_l": 186
+        },
+        {
+          "day": "Wed",
+          "used_l": 179
+        },
+        {
+          "day": "Thu",
+          "used_l": 178
+        },
+        {
+          "day": "Fri",
+          "used_l": 190
+        }
+      ]
+    },
+    {
+      "flat_id": "F44",
+      "name": "Flat 245",
+      "trust_score": 0.73,
+      "tank_level_pct": 55,
+      "tank_capacity_l": 500,
+      "medical_flag": false,
+      "household_size": 6,
+      "children_count": 1,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 1066
+        },
+        {
+          "day": "Tue",
+          "used_l": 1013
+        },
+        {
+          "day": "Wed",
+          "used_l": 1032
+        },
+        {
+          "day": "Thu",
+          "used_l": 964
+        },
+        {
+          "day": "Fri",
+          "used_l": 982
+        }
+      ]
+    },
+    {
+      "flat_id": "F45",
+      "name": "Flat 249",
+      "trust_score": 0.54,
+      "tank_level_pct": 62,
+      "tank_capacity_l": 400,
+      "medical_flag": false,
+      "household_size": 3,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 569
+        },
+        {
+          "day": "Tue",
+          "used_l": 544
+        },
+        {
+          "day": "Wed",
+          "used_l": 542
+        },
+        {
+          "day": "Thu",
+          "used_l": 555
+        },
+        {
+          "day": "Fri",
+          "used_l": 510
+        }
+      ]
+    },
+    {
+      "flat_id": "F46",
+      "name": "Flat 252",
+      "trust_score": 0.3,
+      "tank_level_pct": 24,
+      "tank_capacity_l": 500,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 0,
+      "elderly_count": 2,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 309
+        },
+        {
+          "day": "Tue",
+          "used_l": 306
+        },
+        {
+          "day": "Wed",
+          "used_l": 318
+        },
+        {
+          "day": "Thu",
+          "used_l": 293
+        },
+        {
+          "day": "Fri",
+          "used_l": 322
+        }
+      ]
+    },
+    {
+      "flat_id": "F47",
+      "name": "Flat 254",
+      "trust_score": 0.29,
+      "tank_level_pct": 73,
+      "tank_capacity_l": 400,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 1,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 273
+        },
+        {
+          "day": "Tue",
+          "used_l": 277
+        },
+        {
+          "day": "Wed",
+          "used_l": 291
+        },
+        {
+          "day": "Thu",
+          "used_l": 293
+        },
+        {
+          "day": "Fri",
+          "used_l": 278
+        }
+      ]
+    },
+    {
+      "flat_id": "F48",
+      "name": "Flat 257",
+      "trust_score": 0.44,
+      "tank_level_pct": 87,
+      "tank_capacity_l": 500,
+      "medical_flag": false,
+      "household_size": 7,
+      "children_count": 2,
+      "elderly_count": 1,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 1037
+        },
+        {
+          "day": "Tue",
+          "used_l": 1138
+        },
+        {
+          "day": "Wed",
+          "used_l": 1054
+        },
+        {
+          "day": "Thu",
+          "used_l": 1099
+        },
+        {
+          "day": "Fri",
+          "used_l": 1103
+        }
+      ]
+    },
+    {
+      "flat_id": "F49",
+      "name": "Flat 258",
+      "trust_score": 0.55,
+      "tank_level_pct": 35,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 3,
+      "children_count": 1,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 463
+        },
+        {
+          "day": "Tue",
+          "used_l": 472
+        },
+        {
+          "day": "Wed",
+          "used_l": 468
+        },
+        {
+          "day": "Thu",
+          "used_l": 491
+        },
+        {
+          "day": "Fri",
+          "used_l": 451
+        }
+      ]
+    },
+    {
+      "flat_id": "F50",
+      "name": "Flat 259",
+      "trust_score": 0.9,
+      "tank_level_pct": 22,
+      "tank_capacity_l": 350,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 0,
+      "elderly_count": 1,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 341
+        },
+        {
+          "day": "Tue",
+          "used_l": 322
+        },
+        {
+          "day": "Wed",
+          "used_l": 328
+        },
+        {
+          "day": "Thu",
+          "used_l": 339
+        },
+        {
+          "day": "Fri",
+          "used_l": 324
+        }
+      ]
+    },
+    {
+      "flat_id": "F51",
+      "name": "Flat 260",
+      "trust_score": 0.25,
+      "tank_level_pct": 92,
+      "tank_capacity_l": 600,
+      "medical_flag": false,
+      "household_size": 3,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 527
+        },
+        {
+          "day": "Tue",
+          "used_l": 555
+        },
+        {
+          "day": "Wed",
+          "used_l": 511
+        },
+        {
+          "day": "Thu",
+          "used_l": 536
+        },
+        {
+          "day": "Fri",
+          "used_l": 571
+        }
+      ]
+    },
+    {
+      "flat_id": "F52",
+      "name": "Flat 262",
+      "trust_score": 0.55,
+      "tank_level_pct": 71,
+      "tank_capacity_l": 600,
+      "medical_flag": true,
+      "household_size": 3,
+      "children_count": 0,
+      "elderly_count": 1,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 543
+        },
+        {
+          "day": "Tue",
+          "used_l": 486
+        },
+        {
+          "day": "Wed",
+          "used_l": 494
+        },
+        {
+          "day": "Thu",
+          "used_l": 498
+        },
+        {
+          "day": "Fri",
+          "used_l": 539
+        }
+      ]
+    },
+    {
+      "flat_id": "F53",
+      "name": "Flat 274",
+      "trust_score": 0.74,
+      "tank_level_pct": 53,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 4,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 751
+        },
+        {
+          "day": "Tue",
+          "used_l": 751
+        },
+        {
+          "day": "Wed",
+          "used_l": 707
+        },
+        {
+          "day": "Thu",
+          "used_l": 689
+        },
+        {
+          "day": "Fri",
+          "used_l": 747
+        }
+      ]
+    },
+    {
+      "flat_id": "F54",
+      "name": "Flat 278",
+      "trust_score": 0.36,
+      "tank_level_pct": 10,
+      "tank_capacity_l": 400,
+      "medical_flag": false,
+      "household_size": 3,
+      "children_count": 1,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 479
+        },
+        {
+          "day": "Tue",
+          "used_l": 473
+        },
+        {
+          "day": "Wed",
+          "used_l": 494
+        },
+        {
+          "day": "Thu",
+          "used_l": 476
+        },
+        {
+          "day": "Fri",
+          "used_l": 440
+        }
+      ]
+    },
+    {
+      "flat_id": "F55",
+      "name": "Flat 282",
+      "trust_score": 0.75,
+      "tank_level_pct": 14,
+      "tank_capacity_l": 500,
+      "medical_flag": false,
+      "household_size": 6,
+      "children_count": 1,
+      "elderly_count": 2,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 988
+        },
+        {
+          "day": "Tue",
+          "used_l": 929
+        },
+        {
+          "day": "Wed",
+          "used_l": 971
+        },
+        {
+          "day": "Thu",
+          "used_l": 1002
+        },
+        {
+          "day": "Fri",
+          "used_l": 910
+        }
+      ]
+    },
+    {
+      "flat_id": "F56",
+      "name": "Flat 290",
+      "trust_score": 0.38,
+      "tank_level_pct": 81,
+      "tank_capacity_l": 400,
+      "medical_flag": false,
+      "household_size": 1,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 171
+        },
+        {
+          "day": "Tue",
+          "used_l": 171
+        },
+        {
+          "day": "Wed",
+          "used_l": 181
+        },
+        {
+          "day": "Thu",
+          "used_l": 175
+        },
+        {
+          "day": "Fri",
+          "used_l": 182
+        }
+      ]
+    },
+    {
+      "flat_id": "F57",
+      "name": "Flat 291",
+      "trust_score": 0.34,
+      "tank_level_pct": 37,
+      "tank_capacity_l": 350,
+      "medical_flag": false,
+      "household_size": 7,
+      "children_count": 3,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 1069
+        },
+        {
+          "day": "Tue",
+          "used_l": 1005
+        },
+        {
+          "day": "Wed",
+          "used_l": 1059
+        },
+        {
+          "day": "Thu",
+          "used_l": 1012
+        },
+        {
+          "day": "Fri",
+          "used_l": 1041
+        }
+      ]
+    },
+    {
+      "flat_id": "F58",
+      "name": "Flat 293",
+      "trust_score": 0.4,
+      "tank_level_pct": 61,
+      "tank_capacity_l": 600,
+      "medical_flag": false,
+      "household_size": 5,
+      "children_count": 3,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 716
+        },
+        {
+          "day": "Tue",
+          "used_l": 711
+        },
+        {
+          "day": "Wed",
+          "used_l": 649
+        },
+        {
+          "day": "Thu",
+          "used_l": 676
+        },
+        {
+          "day": "Fri",
+          "used_l": 664
+        }
+      ]
+    },
+    {
+      "flat_id": "F59",
+      "name": "Flat 296",
+      "trust_score": 0.67,
+      "tank_level_pct": 45,
+      "tank_capacity_l": 450,
+      "medical_flag": false,
+      "household_size": 6,
+      "children_count": 2,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 879
+        },
+        {
+          "day": "Tue",
+          "used_l": 965
+        },
+        {
+          "day": "Wed",
+          "used_l": 950
+        },
+        {
+          "day": "Thu",
+          "used_l": 908
+        },
+        {
+          "day": "Fri",
+          "used_l": 961
+        }
+      ]
+    },
+    {
+      "flat_id": "F60",
+      "name": "Flat 306",
+      "trust_score": 0.68,
+      "tank_level_pct": 35,
+      "tank_capacity_l": 350,
+      "medical_flag": true,
+      "household_size": 6,
+      "children_count": 2,
+      "elderly_count": 1,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 913
+        },
+        {
+          "day": "Tue",
+          "used_l": 899
+        },
+        {
+          "day": "Wed",
+          "used_l": 854
+        },
+        {
+          "day": "Thu",
+          "used_l": 861
+        },
+        {
+          "day": "Fri",
+          "used_l": 949
+        }
+      ]
+    },
+    {
+      "flat_id": "F61",
+      "name": "Flat 307",
+      "trust_score": 0.89,
+      "tank_level_pct": 64,
+      "tank_capacity_l": 400,
+      "medical_flag": false,
+      "household_size": 5,
+      "children_count": 4,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 640
+        },
+        {
+          "day": "Tue",
+          "used_l": 614
+        },
+        {
+          "day": "Wed",
+          "used_l": 635
+        },
+        {
+          "day": "Thu",
+          "used_l": 617
+        },
+        {
+          "day": "Fri",
+          "used_l": 585
+        }
+      ]
+    },
+    {
+      "flat_id": "F62",
+      "name": "Flat 308",
+      "trust_score": 0.42,
+      "tank_level_pct": 80,
+      "tank_capacity_l": 600,
+      "medical_flag": false,
+      "household_size": 4,
+      "children_count": 2,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 549
+        },
+        {
+          "day": "Tue",
+          "used_l": 562
+        },
+        {
+          "day": "Wed",
+          "used_l": 602
+        },
+        {
+          "day": "Thu",
+          "used_l": 595
+        },
+        {
+          "day": "Fri",
+          "used_l": 600
+        }
+      ]
+    },
+    {
+      "flat_id": "F63",
+      "name": "Flat 309",
+      "trust_score": 0.43,
+      "tank_level_pct": 60,
+      "tank_capacity_l": 450,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 377
+        },
+        {
+          "day": "Tue",
+          "used_l": 347
+        },
+        {
+          "day": "Wed",
+          "used_l": 349
+        },
+        {
+          "day": "Thu",
+          "used_l": 342
+        },
+        {
+          "day": "Fri",
+          "used_l": 371
+        }
+      ]
+    },
+    {
+      "flat_id": "F64",
+      "name": "Flat 310",
+      "trust_score": 0.98,
+      "tank_level_pct": 74,
+      "tank_capacity_l": 400,
+      "medical_flag": false,
+      "household_size": 3,
+      "children_count": 1,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 489
+        },
+        {
+          "day": "Tue",
+          "used_l": 462
+        },
+        {
+          "day": "Wed",
+          "used_l": 474
+        },
+        {
+          "day": "Thu",
+          "used_l": 448
+        },
+        {
+          "day": "Fri",
+          "used_l": 491
+        }
+      ]
+    },
+    {
+      "flat_id": "F65",
+      "name": "Flat 311",
+      "trust_score": 0.82,
+      "tank_level_pct": 9,
+      "tank_capacity_l": 400,
+      "medical_flag": false,
+      "household_size": 3,
+      "children_count": 1,
+      "elderly_count": 2,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 431
+        },
+        {
+          "day": "Tue",
+          "used_l": 437
+        },
+        {
+          "day": "Wed",
+          "used_l": 429
+        },
+        {
+          "day": "Thu",
+          "used_l": 432
+        },
+        {
+          "day": "Fri",
+          "used_l": 390
+        }
+      ]
+    },
+    {
+      "flat_id": "F66",
+      "name": "Flat 313",
+      "trust_score": 0.59,
+      "tank_level_pct": 74,
+      "tank_capacity_l": 600,
+      "medical_flag": false,
+      "household_size": 3,
+      "children_count": 2,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 406
+        },
+        {
+          "day": "Tue",
+          "used_l": 387
+        },
+        {
+          "day": "Wed",
+          "used_l": 416
+        },
+        {
+          "day": "Thu",
+          "used_l": 410
+        },
+        {
+          "day": "Fri",
+          "used_l": 413
+        }
+      ]
+    },
+    {
+      "flat_id": "F67",
+      "name": "Flat 316",
+      "trust_score": 0.33,
+      "tank_level_pct": 82,
+      "tank_capacity_l": 550,
+      "medical_flag": true,
+      "household_size": 3,
+      "children_count": 2,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 410
+        },
+        {
+          "day": "Tue",
+          "used_l": 384
+        },
+        {
+          "day": "Wed",
+          "used_l": 409
+        },
+        {
+          "day": "Thu",
+          "used_l": 377
+        },
+        {
+          "day": "Fri",
+          "used_l": 413
+        }
+      ]
+    },
+    {
+      "flat_id": "F68",
+      "name": "Flat 318",
+      "trust_score": 0.88,
+      "tank_level_pct": 11,
+      "tank_capacity_l": 600,
+      "medical_flag": false,
+      "household_size": 3,
+      "children_count": 2,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 412
+        },
+        {
+          "day": "Tue",
+          "used_l": 382
+        },
+        {
+          "day": "Wed",
+          "used_l": 410
+        },
+        {
+          "day": "Thu",
+          "used_l": 393
+        },
+        {
+          "day": "Fri",
+          "used_l": 386
+        }
+      ]
+    },
+    {
+      "flat_id": "F69",
+      "name": "Flat 321",
+      "trust_score": 0.36,
+      "tank_level_pct": 82,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 6,
+      "children_count": 2,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 967
+        },
+        {
+          "day": "Tue",
+          "used_l": 904
+        },
+        {
+          "day": "Wed",
+          "used_l": 881
+        },
+        {
+          "day": "Thu",
+          "used_l": 900
+        },
+        {
+          "day": "Fri",
+          "used_l": 915
+        }
+      ]
+    },
+    {
+      "flat_id": "F70",
+      "name": "Flat 323",
+      "trust_score": 0.82,
+      "tank_level_pct": 37,
+      "tank_capacity_l": 400,
+      "medical_flag": true,
+      "household_size": 1,
+      "children_count": 0,
+      "elderly_count": 1,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 159
+        },
+        {
+          "day": "Tue",
+          "used_l": 161
+        },
+        {
+          "day": "Wed",
+          "used_l": 149
+        },
+        {
+          "day": "Thu",
+          "used_l": 155
+        },
+        {
+          "day": "Fri",
+          "used_l": 151
+        }
+      ]
+    },
+    {
+      "flat_id": "F71",
+      "name": "Flat 325",
+      "trust_score": 0.26,
+      "tank_level_pct": 74,
+      "tank_capacity_l": 350,
+      "medical_flag": false,
+      "household_size": 1,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 190
+        },
+        {
+          "day": "Tue",
+          "used_l": 180
+        },
+        {
+          "day": "Wed",
+          "used_l": 189
+        },
+        {
+          "day": "Thu",
+          "used_l": 171
+        },
+        {
+          "day": "Fri",
+          "used_l": 190
+        }
+      ]
+    },
+    {
+      "flat_id": "F72",
+      "name": "Flat 326",
+      "trust_score": 0.56,
+      "tank_level_pct": 34,
+      "tank_capacity_l": 450,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 345
+        },
+        {
+          "day": "Tue",
+          "used_l": 379
+        },
+        {
+          "day": "Wed",
+          "used_l": 349
+        },
+        {
+          "day": "Thu",
+          "used_l": 342
+        },
+        {
+          "day": "Fri",
+          "used_l": 356
+        }
+      ]
+    },
+    {
+      "flat_id": "F73",
+      "name": "Flat 328",
+      "trust_score": 0.65,
+      "tank_level_pct": 77,
+      "tank_capacity_l": 600,
+      "medical_flag": false,
+      "household_size": 6,
+      "children_count": 5,
+      "elderly_count": 1,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 711
+        },
+        {
+          "day": "Tue",
+          "used_l": 676
+        },
+        {
+          "day": "Wed",
+          "used_l": 700
+        },
+        {
+          "day": "Thu",
+          "used_l": 693
+        },
+        {
+          "day": "Fri",
+          "used_l": 682
+        }
+      ]
+    },
+    {
+      "flat_id": "F74",
+      "name": "Flat 329",
+      "trust_score": 0.25,
+      "tank_level_pct": 16,
+      "tank_capacity_l": 350,
+      "medical_flag": true,
+      "household_size": 4,
+      "children_count": 0,
+      "elderly_count": 2,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 671
+        },
+        {
+          "day": "Tue",
+          "used_l": 645
+        },
+        {
+          "day": "Wed",
+          "used_l": 681
+        },
+        {
+          "day": "Thu",
+          "used_l": 625
+        },
+        {
+          "day": "Fri",
+          "used_l": 699
+        }
+      ]
+    },
+    {
+      "flat_id": "F75",
+      "name": "Flat 332",
+      "trust_score": 0.28,
+      "tank_level_pct": 85,
+      "tank_capacity_l": 400,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 1,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 289
+        },
+        {
+          "day": "Tue",
+          "used_l": 295
+        },
+        {
+          "day": "Wed",
+          "used_l": 296
+        },
+        {
+          "day": "Thu",
+          "used_l": 293
+        },
+        {
+          "day": "Fri",
+          "used_l": 283
+        }
+      ]
+    },
+    {
+      "flat_id": "F76",
+      "name": "Flat 333",
+      "trust_score": 0.21,
+      "tank_level_pct": 11,
+      "tank_capacity_l": 450,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 1,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 273
+        },
+        {
+          "day": "Tue",
+          "used_l": 293
+        },
+        {
+          "day": "Wed",
+          "used_l": 282
+        },
+        {
+          "day": "Thu",
+          "used_l": 281
+        },
+        {
+          "day": "Fri",
+          "used_l": 299
+        }
+      ]
+    },
+    {
+      "flat_id": "F77",
+      "name": "Flat 334",
+      "trust_score": 0.88,
+      "tank_level_pct": 72,
+      "tank_capacity_l": 450,
+      "medical_flag": false,
+      "household_size": 5,
+      "children_count": 2,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 774
+        },
+        {
+          "day": "Tue",
+          "used_l": 736
+        },
+        {
+          "day": "Wed",
+          "used_l": 737
+        },
+        {
+          "day": "Thu",
+          "used_l": 746
+        },
+        {
+          "day": "Fri",
+          "used_l": 746
+        }
+      ]
+    },
+    {
+      "flat_id": "F78",
+      "name": "Flat 337",
+      "trust_score": 0.65,
+      "tank_level_pct": 76,
+      "tank_capacity_l": 500,
+      "medical_flag": false,
+      "household_size": 7,
+      "children_count": 6,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 806
+        },
+        {
+          "day": "Tue",
+          "used_l": 789
+        },
+        {
+          "day": "Wed",
+          "used_l": 819
+        },
+        {
+          "day": "Thu",
+          "used_l": 870
+        },
+        {
+          "day": "Fri",
+          "used_l": 844
+        }
+      ]
+    },
+    {
+      "flat_id": "F79",
+      "name": "Flat 340",
+      "trust_score": 0.61,
+      "tank_level_pct": 70,
+      "tank_capacity_l": 350,
+      "medical_flag": false,
+      "household_size": 1,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 188
+        },
+        {
+          "day": "Tue",
+          "used_l": 182
+        },
+        {
+          "day": "Wed",
+          "used_l": 175
+        },
+        {
+          "day": "Thu",
+          "used_l": 181
+        },
+        {
+          "day": "Fri",
+          "used_l": 169
+        }
+      ]
+    },
+    {
+      "flat_id": "F80",
+      "name": "Flat 342",
+      "trust_score": 0.43,
+      "tank_level_pct": 25,
+      "tank_capacity_l": 450,
+      "medical_flag": false,
+      "household_size": 6,
+      "children_count": 5,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 700
+        },
+        {
+          "day": "Tue",
+          "used_l": 713
+        },
+        {
+          "day": "Wed",
+          "used_l": 726
+        },
+        {
+          "day": "Thu",
+          "used_l": 732
+        },
+        {
+          "day": "Fri",
+          "used_l": 716
+        }
+      ]
+    },
+    {
+      "flat_id": "F81",
+      "name": "Flat 343",
+      "trust_score": 0.39,
+      "tank_level_pct": 44,
+      "tank_capacity_l": 400,
+      "medical_flag": false,
+      "household_size": 5,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 892
+        },
+        {
+          "day": "Tue",
+          "used_l": 867
+        },
+        {
+          "day": "Wed",
+          "used_l": 895
+        },
+        {
+          "day": "Thu",
+          "used_l": 942
+        },
+        {
+          "day": "Fri",
+          "used_l": 930
+        }
+      ]
+    },
+    {
+      "flat_id": "F82",
+      "name": "Flat 344",
+      "trust_score": 0.88,
+      "tank_level_pct": 43,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 4,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 690
+        },
+        {
+          "day": "Tue",
+          "used_l": 683
+        },
+        {
+          "day": "Wed",
+          "used_l": 720
+        },
+        {
+          "day": "Thu",
+          "used_l": 730
+        },
+        {
+          "day": "Fri",
+          "used_l": 704
+        }
+      ]
+    },
+    {
+      "flat_id": "F83",
+      "name": "Flat 346",
+      "trust_score": 0.41,
+      "tank_level_pct": 8,
+      "tank_capacity_l": 500,
+      "medical_flag": true,
+      "household_size": 4,
+      "children_count": 2,
+      "elderly_count": 2,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 541
+        },
+        {
+          "day": "Tue",
+          "used_l": 537
+        },
+        {
+          "day": "Wed",
+          "used_l": 532
+        },
+        {
+          "day": "Thu",
+          "used_l": 504
+        },
+        {
+          "day": "Fri",
+          "used_l": 502
+        }
+      ]
+    },
+    {
+      "flat_id": "F84",
+      "name": "Flat 347",
+      "trust_score": 0.54,
+      "tank_level_pct": 71,
+      "tank_capacity_l": 600,
+      "medical_flag": true,
+      "household_size": 6,
+      "children_count": 2,
+      "elderly_count": 4,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 779
+        },
+        {
+          "day": "Tue",
+          "used_l": 801
+        },
+        {
+          "day": "Wed",
+          "used_l": 824
+        },
+        {
+          "day": "Thu",
+          "used_l": 861
+        },
+        {
+          "day": "Fri",
+          "used_l": 784
+        }
+      ]
+    },
+    {
+      "flat_id": "F85",
+      "name": "Flat 351",
+      "trust_score": 0.47,
+      "tank_level_pct": 86,
+      "tank_capacity_l": 600,
+      "medical_flag": false,
+      "household_size": 7,
+      "children_count": 2,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 1102
+        },
+        {
+          "day": "Tue",
+          "used_l": 1131
+        },
+        {
+          "day": "Wed",
+          "used_l": 1073
+        },
+        {
+          "day": "Thu",
+          "used_l": 1140
+        },
+        {
+          "day": "Fri",
+          "used_l": 1113
+        }
+      ]
+    },
+    {
+      "flat_id": "F86",
+      "name": "Flat 352",
+      "trust_score": 0.72,
+      "tank_level_pct": 32,
+      "tank_capacity_l": 550,
+      "medical_flag": false,
+      "household_size": 4,
+      "children_count": 2,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 557
+        },
+        {
+          "day": "Tue",
+          "used_l": 586
+        },
+        {
+          "day": "Wed",
+          "used_l": 541
+        },
+        {
+          "day": "Thu",
+          "used_l": 592
+        },
+        {
+          "day": "Fri",
+          "used_l": 594
+        }
+      ]
+    },
+    {
+      "flat_id": "F87",
+      "name": "Flat 353",
+      "trust_score": 0.33,
+      "tank_level_pct": 81,
+      "tank_capacity_l": 450,
+      "medical_flag": false,
+      "household_size": 6,
+      "children_count": 4,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 753
+        },
+        {
+          "day": "Tue",
+          "used_l": 783
+        },
+        {
+          "day": "Wed",
+          "used_l": 760
+        },
+        {
+          "day": "Thu",
+          "used_l": 834
+        },
+        {
+          "day": "Fri",
+          "used_l": 792
+        }
+      ]
+    },
+    {
+      "flat_id": "F88",
+      "name": "Flat 354",
+      "trust_score": 0.35,
+      "tank_level_pct": 84,
+      "tank_capacity_l": 450,
+      "medical_flag": true,
+      "household_size": 7,
+      "children_count": 3,
+      "elderly_count": 3,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 909
+        },
+        {
+          "day": "Tue",
+          "used_l": 932
+        },
+        {
+          "day": "Wed",
+          "used_l": 1001
+        },
+        {
+          "day": "Thu",
+          "used_l": 956
+        },
+        {
+          "day": "Fri",
+          "used_l": 996
+        }
+      ]
+    },
+    {
+      "flat_id": "F89",
+      "name": "Flat 357",
+      "trust_score": 0.63,
+      "tank_level_pct": 60,
+      "tank_capacity_l": 400,
+      "medical_flag": false,
+      "household_size": 4,
+      "children_count": 1,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 660
+        },
+        {
+          "day": "Tue",
+          "used_l": 685
+        },
+        {
+          "day": "Wed",
+          "used_l": 654
+        },
+        {
+          "day": "Thu",
+          "used_l": 682
+        },
+        {
+          "day": "Fri",
+          "used_l": 677
+        }
+      ]
+    },
+    {
+      "flat_id": "F90",
+      "name": "Flat 362",
+      "trust_score": 0.96,
+      "tank_level_pct": 84,
+      "tank_capacity_l": 450,
+      "medical_flag": false,
+      "household_size": 6,
+      "children_count": 3,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 874
+        },
+        {
+          "day": "Tue",
+          "used_l": 885
+        },
+        {
+          "day": "Wed",
+          "used_l": 863
+        },
+        {
+          "day": "Thu",
+          "used_l": 897
+        },
+        {
+          "day": "Fri",
+          "used_l": 867
+        }
+      ]
+    },
+    {
+      "flat_id": "F91",
+      "name": "Flat 367",
+      "trust_score": 0.37,
+      "tank_level_pct": 29,
+      "tank_capacity_l": 500,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 376
+        },
+        {
+          "day": "Tue",
+          "used_l": 370
+        },
+        {
+          "day": "Wed",
+          "used_l": 358
+        },
+        {
+          "day": "Thu",
+          "used_l": 349
+        },
+        {
+          "day": "Fri",
+          "used_l": 348
+        }
+      ]
+    },
+    {
+      "flat_id": "F92",
+      "name": "Flat 368",
+      "trust_score": 0.41,
+      "tank_level_pct": 60,
+      "tank_capacity_l": 450,
+      "medical_flag": false,
+      "household_size": 4,
+      "children_count": 3,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 511
+        },
+        {
+          "day": "Tue",
+          "used_l": 519
+        },
+        {
+          "day": "Wed",
+          "used_l": 504
+        },
+        {
+          "day": "Thu",
+          "used_l": 511
+        },
+        {
+          "day": "Fri",
+          "used_l": 489
+        }
+      ]
+    },
+    {
+      "flat_id": "F93",
+      "name": "Flat 369",
+      "trust_score": 0.93,
+      "tank_level_pct": 94,
+      "tank_capacity_l": 400,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 1,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 273
+        },
+        {
+          "day": "Tue",
+          "used_l": 280
+        },
+        {
+          "day": "Wed",
+          "used_l": 280
+        },
+        {
+          "day": "Thu",
+          "used_l": 281
+        },
+        {
+          "day": "Fri",
+          "used_l": 289
+        }
+      ]
+    },
+    {
+      "flat_id": "F94",
+      "name": "Flat 370",
+      "trust_score": 0.21,
+      "tank_level_pct": 11,
+      "tank_capacity_l": 600,
+      "medical_flag": true,
+      "household_size": 5,
+      "children_count": 3,
+      "elderly_count": 1,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 627
+        },
+        {
+          "day": "Tue",
+          "used_l": 635
+        },
+        {
+          "day": "Wed",
+          "used_l": 671
+        },
+        {
+          "day": "Thu",
+          "used_l": 672
+        },
+        {
+          "day": "Fri",
+          "used_l": 621
+        }
+      ]
+    },
+    {
+      "flat_id": "F95",
+      "name": "Flat 371",
+      "trust_score": 0.28,
+      "tank_level_pct": 80,
+      "tank_capacity_l": 500,
+      "medical_flag": false,
+      "household_size": 4,
+      "children_count": 0,
+      "elderly_count": 3,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 631
+        },
+        {
+          "day": "Tue",
+          "used_l": 641
+        },
+        {
+          "day": "Wed",
+          "used_l": 631
+        },
+        {
+          "day": "Thu",
+          "used_l": 615
+        },
+        {
+          "day": "Fri",
+          "used_l": 632
+        }
+      ]
+    },
+    {
+      "flat_id": "F96",
+      "name": "Flat 372",
+      "trust_score": 0.95,
+      "tank_level_pct": 23,
+      "tank_capacity_l": 600,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 377
+        },
+        {
+          "day": "Tue",
+          "used_l": 363
+        },
+        {
+          "day": "Wed",
+          "used_l": 368
+        },
+        {
+          "day": "Thu",
+          "used_l": 375
+        },
+        {
+          "day": "Fri",
+          "used_l": 371
+        }
+      ]
+    },
+    {
+      "flat_id": "F97",
+      "name": "Flat 376",
+      "trust_score": 0.73,
+      "tank_level_pct": 37,
+      "tank_capacity_l": 450,
+      "medical_flag": false,
+      "household_size": 6,
+      "children_count": 5,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 708
+        },
+        {
+          "day": "Tue",
+          "used_l": 676
+        },
+        {
+          "day": "Wed",
+          "used_l": 706
+        },
+        {
+          "day": "Thu",
+          "used_l": 740
+        },
+        {
+          "day": "Fri",
+          "used_l": 749
+        }
+      ]
+    },
+    {
+      "flat_id": "F98",
+      "name": "Flat 377",
+      "trust_score": 0.75,
+      "tank_level_pct": 66,
+      "tank_capacity_l": 500,
+      "medical_flag": true,
+      "household_size": 4,
+      "children_count": 1,
+      "elderly_count": 3,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 597
+        },
+        {
+          "day": "Tue",
+          "used_l": 560
+        },
+        {
+          "day": "Wed",
+          "used_l": 583
+        },
+        {
+          "day": "Thu",
+          "used_l": 569
+        },
+        {
+          "day": "Fri",
+          "used_l": 573
+        }
+      ]
+    },
+    {
+      "flat_id": "F99",
+      "name": "Flat 384",
+      "trust_score": 0.94,
+      "tank_level_pct": 28,
+      "tank_capacity_l": 600,
+      "medical_flag": false,
+      "household_size": 2,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 347
+        },
+        {
+          "day": "Tue",
+          "used_l": 347
+        },
+        {
+          "day": "Wed",
+          "used_l": 357
+        },
+        {
+          "day": "Thu",
+          "used_l": 339
+        },
+        {
+          "day": "Fri",
+          "used_l": 352
+        }
+      ]
+    },
+    {
+      "flat_id": "F100",
+      "name": "Flat 385",
+      "trust_score": 0.35,
+      "tank_level_pct": 63,
+      "tank_capacity_l": 350,
+      "medical_flag": false,
+      "household_size": 1,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 184
+        },
+        {
+          "day": "Tue",
+          "used_l": 178
+        },
+        {
+          "day": "Wed",
+          "used_l": 172
+        },
+        {
+          "day": "Thu",
+          "used_l": 179
+        },
+        {
+          "day": "Fri",
+          "used_l": 172
+        }
+      ]
+    },
+    {
+      "flat_id": "F101",
+      "name": "Flat 389",
+      "trust_score": 0.76,
+      "tank_level_pct": 59,
+      "tank_capacity_l": 450,
+      "medical_flag": false,
+      "household_size": 1,
+      "children_count": 0,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 182
+        },
+        {
+          "day": "Tue",
+          "used_l": 169
+        },
+        {
+          "day": "Wed",
+          "used_l": 177
+        },
+        {
+          "day": "Thu",
+          "used_l": 181
+        },
+        {
+          "day": "Fri",
+          "used_l": 169
+        }
+      ]
+    },
+    {
+      "flat_id": "F102",
+      "name": "Flat 392",
+      "trust_score": 0.24,
+      "tank_level_pct": 20,
+      "tank_capacity_l": 400,
+      "medical_flag": false,
+      "household_size": 4,
+      "children_count": 1,
+      "elderly_count": 3,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 576
+        },
+        {
+          "day": "Tue",
+          "used_l": 541
+        },
+        {
+          "day": "Wed",
+          "used_l": 563
+        },
+        {
+          "day": "Thu",
+          "used_l": 535
+        },
+        {
+          "day": "Fri",
+          "used_l": 558
+        }
+      ]
+    },
+    {
+      "flat_id": "F103",
+      "name": "Flat 396",
+      "trust_score": 0.75,
+      "tank_level_pct": 71,
+      "tank_capacity_l": 350,
+      "medical_flag": false,
+      "household_size": 7,
+      "children_count": 4,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 937
+        },
+        {
+          "day": "Tue",
+          "used_l": 950
+        },
+        {
+          "day": "Wed",
+          "used_l": 1001
+        },
+        {
+          "day": "Thu",
+          "used_l": 956
+        },
+        {
+          "day": "Fri",
+          "used_l": 999
+        }
+      ]
+    },
+    {
+      "flat_id": "F104",
+      "name": "Flat 398",
+      "trust_score": 0.76,
+      "tank_level_pct": 68,
+      "tank_capacity_l": 500,
+      "medical_flag": true,
+      "household_size": 4,
+      "children_count": 1,
+      "elderly_count": 1,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 645
+        },
+        {
+          "day": "Tue",
+          "used_l": 601
+        },
+        {
+          "day": "Wed",
+          "used_l": 589
+        },
+        {
+          "day": "Thu",
+          "used_l": 584
+        },
+        {
+          "day": "Fri",
+          "used_l": 623
+        }
+      ]
+    },
+    {
+      "flat_id": "F105",
+      "name": "Flat 400",
+      "trust_score": 0.22,
+      "tank_level_pct": 10,
+      "tank_capacity_l": 500,
+      "medical_flag": true,
+      "household_size": 6,
+      "children_count": 3,
+      "elderly_count": 0,
+      "usage_history": [
+        {
+          "day": "Mon",
+          "used_l": 914
+        },
+        {
+          "day": "Tue",
+          "used_l": 847
+        },
+        {
+          "day": "Wed",
+          "used_l": 878
+        },
+        {
+          "day": "Thu",
+          "used_l": 891
+        },
+        {
+          "day": "Fri",
+          "used_l": 878
+        }
+      ]
+    }
+  ],
+  "system_state": {
+    "available_supply_l": 28000,
+    "capacity_l": 50600,
+    "status": "normal"
+  }
+}

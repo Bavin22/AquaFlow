@@ -662,3 +662,5 @@ if __name__ == "__main__":
     sample_state = {"available_supply_l": 600, "status": "crisis"}
     import json
     print(json.dumps(run_allocation(sample_flats, sample_state), indent=2))
+
+    

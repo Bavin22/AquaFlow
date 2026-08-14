@@ -113,6 +113,33 @@ def compute_need(flat: dict) -> float:
     return empty_pct * flat["tank_capacity_l"]
 
 
+def compute_avg_daily_usage(flat: dict) -> float:
+    """
+    Average daily usage from usage_history, falling back to the dataset's
+    own population average (150L/person/day - see FAIR_SHARE_PER_PERSON_L
+    derivation) if no history is present, rather than an unrelated constant.
+    """
+    history = flat.get("usage_history", [])
+    if history:
+        return sum(d["used_l"] for d in history) / len(history)
+    return flat.get("household_size", 1) * 150.0
+
+
+def compute_days_until_empty(flat: dict) -> float:
+    """
+    Informational only - estimated days until this flat's tank runs dry at
+    its recent usage rate. Reported for transparency and used as a modest
+    TIE-BREAK factor only (see compute_intra_tier_weight) - it never feeds
+    the vulnerability score itself, so it cannot let urgency override
+    medical/dependency priority the way an uncapped scoring term could.
+    """
+    current_water = (flat.get("tank_level_pct", 50) / 100.0) * flat.get("tank_capacity_l", 500)
+    avg_usage = compute_avg_daily_usage(flat)
+    if avg_usage <= 0:
+        avg_usage = 1.0
+    return round(current_water / avg_usage, 2)
+
+
 def compute_fair_share_cap(flat: dict) -> float:
     """
     The most this flat's need is allowed to count for, regardless of tank
@@ -236,9 +263,30 @@ def compute_household_weight(flat: dict) -> float:
     return 1.0 + min(0.03 * max(size - 1, 0), 0.18)  # +3%/person above 1, capped at +18%
 
 
+def compute_depletion_weight(flat: dict) -> float:
+    """
+    A flat about to run completely dry gets a modest edge over one with
+    more runway, AT THE SAME vulnerability score - deliberately capped
+    small (max +15%) so it can only ever break ties, never let urgency
+    outrank a higher vulnerability score the way an uncapped scoring
+    term could (see project history: a rewrite that put urgency directly
+    into the priority score let non-medical groups outrank medical ones).
+    """
+    days_left = compute_days_until_empty(flat)
+    if days_left <= 0.25:
+        return 1.15
+    if days_left <= 0.5:
+        return 1.10
+    if days_left <= 1.0:
+        return 1.05
+    if days_left <= 2.0:
+        return 1.02
+    return 1.0
+
+
 def compute_intra_tier_weight(flat: dict) -> dict:
     """
-    Within a tie group (identical vulnerability score), four factors
+    Within a tie group (identical vulnerability score), five factors
     combine to break the tie. None of them can zero out a flat's share -
     everyone in the group gets at least some claim. Returns a breakdown
     dict (not just the product) so the API can show its work.
@@ -248,13 +296,15 @@ def compute_intra_tier_weight(flat: dict) -> dict:
     urgency_weight = 1.0 + 0.3 * empty_pct  # ranges 1.0 (full tank) to 1.3 (empty tank)
     trend_weight = compute_usage_trend_weight(flat)
     household_weight = compute_household_weight(flat)
+    depletion_weight = compute_depletion_weight(flat)
 
-    combined = trust_weight * urgency_weight * trend_weight * household_weight
+    combined = trust_weight * urgency_weight * trend_weight * household_weight * depletion_weight
     return {
         "trust_weight": round(trust_weight, 3),
         "urgency_weight": round(urgency_weight, 3),
         "trend_weight": round(trend_weight, 3),
         "household_weight": round(household_weight, 3),
+        "depletion_weight": round(depletion_weight, 3),
         "combined": combined,
     }
 
@@ -324,6 +374,65 @@ def ranked_allocation(flats: list, available_supply: float, needs_override: dict
     return alloc
 
 
+def calculate_jains_fairness_index(allocations: list) -> float:
+    """
+    Reporting only - does not affect allocation math. Jain's Fairness
+    Index over need-fulfillment fractions (1.0 = perfectly fair, lower =
+    more unequal). Standard formula: (sum(x))^2 / (n * sum(x^2)).
+    """
+    fractions = []
+    for a in allocations:
+        need = a.get("need_l", 0.0)
+        allocated = a.get("allocated_l", 0.0)
+        fractions.append(1.0 if need <= 0.01 else min(1.0, allocated / need))
+    n = len(fractions)
+    if n == 0:
+        return 1.0
+    sum_frac = sum(fractions)
+    sum_sq_frac = sum(x ** 2 for x in fractions)
+    if sum_sq_frac == 0:
+        return 0.0
+    return round((sum_frac ** 2) / (n * sum_sq_frac), 4)
+
+
+def calculate_gini_coefficient(allocations: list) -> float:
+    """
+    Reporting only - does not affect allocation math. Gini coefficient of
+    inequality across allocated litres (0 = perfectly equal, 1 = maximally
+    unequal). Standard discrete formula over sorted values.
+    """
+    values = [a.get("allocated_l", 0.0) for a in allocations]
+    n = len(values)
+    if n == 0:
+        return 0.0
+    sorted_values = sorted(values)
+    total = sum(sorted_values)
+    if total == 0:
+        return 0.0
+    accum = sum((idx + 1) * val for idx, val in enumerate(sorted_values))
+    return round((2.0 * accum) / (n * total) - (n + 1.0) / n, 4)
+
+
+def forecast_demand(flats: list) -> float:
+    """
+    Reporting only - does not affect allocation math. Projects next
+    cycle's total demand from each flat's usage trend (see
+    compute_usage_trend_weight for the same trend logic used elsewhere).
+    """
+    total_forecast = 0.0
+    for f in flats:
+        avg_usage = compute_avg_daily_usage(f)
+        history = f.get("usage_history", [])
+        if len(history) >= 4:
+            first_half = sum(d["used_l"] for d in history[:2]) / 2
+            second_half = sum(d["used_l"] for d in history[-2:]) / 2
+            trend_ratio = (second_half / first_half) if first_half > 0 else 1.0
+        else:
+            trend_ratio = 1.0
+        total_forecast += avg_usage * max(0.8, min(trend_ratio, 1.25))
+    return round(total_forecast, 2)
+
+
 def run_allocation(flats: list, system_state: dict) -> dict:
     supply = system_state["available_supply_l"]
 
@@ -388,7 +497,7 @@ def run_allocation(flats: list, system_state: dict) -> dict:
         pct_of_need = round((allocated / need) * 100, 1) if need > 0 else 100.0
         factors = describe_vulnerability(f)
         weight_breakdown = compute_intra_tier_weight(f)
-        del weight_breakdown["combined"]  # internal only - keep the API output to the four named factors
+        del weight_breakdown["combined"]  # internal only - keep the API output to the five named factors
 
         cap_note = f" (raw need {raw_need}L capped to fair-share limit)" if fair_share_capped else ""
         floor_note = f" Includes a guaranteed survival floor of {floor_l}L." if floor_l > 0.01 else ""
@@ -406,6 +515,7 @@ def run_allocation(flats: list, system_state: dict) -> dict:
             "fair_share_capped": fair_share_capped,
             "vulnerability_score": score,
             "tie_break_weights": weight_breakdown,
+            "days_until_empty": compute_days_until_empty(f),
             "reason": reason,
         })
 
@@ -418,6 +528,9 @@ def run_allocation(flats: list, system_state: dict) -> dict:
         "supply_l": supply,
         "bottleneck": bottleneck,
         "status": system_state["status"],
+        "jains_fairness_index": calculate_jains_fairness_index(results),
+        "gini_coefficient": calculate_gini_coefficient(results),
+        "demand_forecast_l": forecast_demand(flats),
     }
 
 
@@ -504,21 +617,27 @@ def run_hierarchical_allocation(master_state: dict, sub_tanks: list, flats_by_su
     level1_result = run_allocation(pseudo_flats, master_state)
     level1_by_id = {a["flat_id"]: a for a in level1_result["allocations"]}
 
-    # Level 2 - each sub-tank distributes what IT received across its
-    # dependent flats. Same function again, called once per sub-tank.
+    # Level 2 - each sub-tank distributes across its dependent flats. A
+    # sub-tank redistributes from its TOTAL current stock, not just what
+    # it received this cycle - a tank sitting at 55% already holds real
+    # water before any refill arrives. Ignoring that stock (an earlier
+    # version of this function did) silently discards it and makes flats
+    # look starved even when their sub-tank has plenty on hand.
     level2_results = {}
     for st in sub_tanks:
         stid = st["sub_tank_id"]
         received = level1_by_id.get(stid, {}).get("allocated_l", 0.0)
+        existing_stock = (st.get("tank_level_pct", 0) / 100.0) * st.get("tank_capacity_l", 0)
+        available_for_flats = existing_stock + received
         dependents = flats_by_subtank.get(stid, [])
-        subtank_state = {"available_supply_l": received, "status": master_state["status"]}
+        subtank_state = {"available_supply_l": available_for_flats, "status": master_state["status"]}
         if dependents:
             level2_results[stid] = run_allocation(dependents, subtank_state)
         else:
             level2_results[stid] = {
                 "allocations": [], "total_allocated_l": 0.0, "total_need_l": 0.0,
                 "total_raw_need_l": 0.0, "total_survival_floor_l": 0.0,
-                "supply_l": received, "bottleneck": "none", "status": master_state["status"],
+                "supply_l": available_for_flats, "bottleneck": "none", "status": master_state["status"],
             }
 
     return {

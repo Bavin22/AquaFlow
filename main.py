@@ -23,6 +23,10 @@ from pymongo import MongoClient
 from dotenv import load_dotenv
 
 from engine import run_allocation, run_hierarchical_allocation
+from pydantic import BaseModel
+
+class SimulationRequest(BaseModel):
+    scenarios: list[float] = None
 
 load_dotenv()
 
@@ -74,10 +78,10 @@ def allocate():
 
     result = run_allocation(flats, system_state)
 
-    # Log this run: clear old log entries and write the fresh reasoning per flat
+    # Log this run: clear old log entries and write the fresh reasoning per flat using optimized bulk insert_many
     db.allocation_log.delete_many({})
-    for entry in result["allocations"]:
-        db.allocation_log.insert_one(dict(entry))
+    if result["allocations"]:
+        db.allocation_log.insert_many([dict(entry) for entry in result["allocations"]])
 
     return result
 
@@ -108,7 +112,7 @@ def reset_crisis():
     """Restore supply back to a normal baseline for re-demoing."""
     db.system_state.update_one(
         {},
-        {"$set": {"available_supply_l": 3000, "status": "normal"}},
+        {"$set": {"available_supply_l": 28000, "status": "normal"}},
     )
     return _no_id(db.system_state.find_one({}))
 
@@ -141,12 +145,80 @@ def allocate_hierarchical():
     result = run_hierarchical_allocation(master_state, sub_tanks, flats_by_subtank)
 
     # Log every flat-level allocation across all sub-tanks in one place,
-    # tagged with which sub-tank it came from, for dashboard/history use.
+    # tagged with which sub-tank it came from, using optimized bulk insert_many.
     db.allocation_log.delete_many({})
+    entries = []
     for stid, sub_result in result["flat_allocation_by_subtank"].items():
         for entry in sub_result["allocations"]:
             entry_with_tank = dict(entry)
             entry_with_tank["sub_tank_id"] = stid
-            db.allocation_log.insert_one(entry_with_tank)
+            entries.append(entry_with_tank)
+            
+    if entries:
+        db.allocation_log.insert_many(entries)
 
     return result
+
+
+@app.get("/forecast")
+def get_forecast():
+    flats = [_no_id(f) for f in db.flats.find({})]
+    system_state = _no_id(db.system_state.find_one({}))
+    if not flats or not system_state:
+        raise HTTPException(status_code=404, detail="Data not seeded yet")
+        
+    from engine import forecast_demand
+    predicted = forecast_demand(flats)
+    available = system_state["available_supply_l"]
+    shortage = max(0.0, predicted - available)
+    
+    return {
+        "predicted_demand_l": predicted,
+        "available_supply_l": available,
+        "predicted_shortage_l": round(shortage, 2),
+        "status": "shortage_warning" if shortage > 0 else "adequate"
+    }
+
+
+@app.post("/simulate")
+def simulate(req: SimulationRequest = None):
+    flats = [_no_id(f) for f in db.flats.find({})]
+    system_state = _no_id(db.system_state.find_one({}))
+    if not flats or not system_state:
+        raise HTTPException(status_code=404, detail="Data not seeded yet")
+        
+    scenarios = req.scenarios if req and req.scenarios else None
+    if not scenarios:
+        scenarios = [5000.0, 10000.0, 15000.0, 20000.0, 25000.0, 30000.0]
+        
+    results = {}
+    for supply in scenarios:
+        sim_state = dict(system_state)
+        sim_state["available_supply_l"] = supply
+        if supply < 18000:
+            sim_state["status"] = "crisis"
+        else:
+            sim_state["status"] = "normal"
+            
+        from engine import run_allocation
+        alloc_res = run_allocation(flats, sim_state)
+        
+        total_need = alloc_res["total_need_l"]
+        total_allocated = alloc_res["total_allocated_l"]
+        coverage_pct = round((total_allocated / total_need) * 100, 1) if total_need > 0 else 100.0
+        
+        floors_met = sum(1 for a in alloc_res["allocations"] if a["allocated_l"] >= a["survival_floor_l"] - 0.01)
+        shortfall_count = sum(1 for a in alloc_res["allocations"] if a["allocated_l"] < a["need_l"] - 0.01)
+        
+        results[str(int(supply))] = {
+            "supply_l": supply,
+            "total_allocated_l": total_allocated,
+            "coverage_pct": coverage_pct,
+            "survival_floor_coverage_pct": round((floors_met / len(flats)) * 100, 1),
+            "shortfall_count": shortfall_count,
+            "jains_fairness_index": alloc_res["jains_fairness_index"],
+            "gini_coefficient": alloc_res["gini_coefficient"],
+            "system_reserve_l": alloc_res["system_reserve_l"]
+        }
+        
+    return {"scenarios": results}

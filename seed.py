@@ -38,4 +38,12 @@ if "sub_tanks" in data:
     subtanks_result = db.sub_tanks.insert_many(data["sub_tanks"])
     print(f"Inserted {len(subtanks_result.inserted_ids)} sub_tanks into '{DB_NAME}.sub_tanks'")
 
+# Create indexes for optimal query execution performance
+print("Creating database indexes...")
+db.flats.create_index("flat_id", unique=True)
+db.flats.create_index("sub_tank_id")
+db.sub_tanks.create_index("sub_tank_id", unique=True)
+db.allocation_log.create_index("flat_id")
+print("Indexes created successfully.")
+
 print("Seed complete. allocation_log left empty — it fills up as you call /allocate.")

@@ -159,7 +159,13 @@ def compute_vulnerability_score(flat: dict) -> int:
     reasoning behind each component.
     """
     score = 0
-    if flat.get("medical_flag"):
+    medical_count = flat.get("medical_count")
+    if medical_count is not None:
+        # Aggregate (sub-tank) pseudo-flat: magnitude matters - a tank
+        # feeding 3 medical households is more urgent than one feeding 1,
+        # not just "has at least one" (see build_subtank_pseudo_flat).
+        score += MEDICAL_POINTS * medical_count
+    elif flat.get("medical_flag"):
         score += MEDICAL_POINTS
 
     elderly = flat.get("elderly_count", 0)
@@ -179,7 +185,11 @@ def compute_vulnerability_score(flat: dict) -> int:
 def describe_vulnerability(flat: dict) -> str:
     """Human-readable breakdown of what drove this flat's score, for reason strings."""
     parts = []
-    if flat.get("medical_flag"):
+    medical_count = flat.get("medical_count")
+    if medical_count is not None:
+        if medical_count > 0:
+            parts.append(f"{medical_count} medical household{'s' if medical_count != 1 else ''}")
+    elif flat.get("medical_flag"):
         parts.append("medical need")
     elderly = flat.get("elderly_count", 0)
     children = flat.get("children_count", 0)
@@ -411,6 +421,114 @@ def run_allocation(flats: list, system_state: dict) -> dict:
     }
 
 
+# ---------------------------------------------------------------------------
+# HIERARCHICAL ALLOCATION - master tank -> sub-tanks -> flats
+#
+# The building has one master tank feeding several sub-tanks, each of which
+# feeds a set of flats. Rather than writing a second algorithm for the
+# master->sub-tank hop, a sub-tank is represented as an aggregated "pseudo-
+# flat" (its dependents' vulnerability factors summed, its OWN physical
+# tank_level_pct/tank_capacity_l as the room it has to receive water) and
+# run through the exact same run_allocation() used for flats. The same
+# fairness guarantees - strict rank order, survival floor, anti-hoarding
+# cap, zero inversions - therefore hold at BOTH levels, because it is
+# provably the same function, not a similar one.
+#
+# Simplifying assumption (stated explicitly, not hidden): each flat still
+# has its own small tank/reservoir (tank_level_pct, tank_capacity_l) fed by
+# the sub-tank, rather than a raw meter with no buffer at all. A pure
+# meter-only model (need estimated from usage_history instead of a tank
+# reading) is a natural extension but changes need-calculation for every
+# flat, not just the new sub-tank layer - flagged as future work rather
+# than rushed in alongside a new hierarchy level.
+# ---------------------------------------------------------------------------
+
+DAY_ORDER = ["Mon", "Tue", "Wed", "Thu", "Fri"]
+
+
+def build_subtank_pseudo_flat(sub_tank: dict, dependent_flats: list) -> dict:
+    """
+    Aggregates a sub-tank's dependent flats into a single pseudo-flat dict
+    that compute_vulnerability_score(), compute_need(), etc. can consume
+    unchanged. Vulnerability factors are CUMULATIVE across dependents (a
+    tank serving 3 medical households outranks one serving 1); the tank
+    fields are the sub-tank's OWN physical sensor readings, since that's
+    what actually bounds how much it can receive from the master tank.
+    """
+    medical_count = sum(1 for f in dependent_flats if f.get("medical_flag"))
+    elderly_total = sum(f.get("elderly_count", 0) for f in dependent_flats)
+    children_total = sum(f.get("children_count", 0) for f in dependent_flats)
+    household_total = sum(f.get("household_size", 0) for f in dependent_flats)
+    trust_avg = (sum(f.get("trust_score", 1.0) for f in dependent_flats) / len(dependent_flats)
+                 if dependent_flats else 1.0)
+
+    day_totals = {}
+    for f in dependent_flats:
+        for entry in f.get("usage_history", []):
+            day_totals[entry["day"]] = day_totals.get(entry["day"], 0) + entry["used_l"]
+    usage_history = [{"day": d, "used_l": day_totals[d]} for d in DAY_ORDER if d in day_totals]
+
+    return {
+        "flat_id": sub_tank["sub_tank_id"],
+        "medical_count": medical_count,
+        "elderly_count": elderly_total,
+        "children_count": children_total,
+        "household_size": household_total,
+        "trust_score": round(trust_avg, 3),
+        "tank_level_pct": sub_tank["tank_level_pct"],
+        "tank_capacity_l": sub_tank["tank_capacity_l"],
+        "usage_history": usage_history,
+    }
+
+
+def run_hierarchical_allocation(master_state: dict, sub_tanks: list, flats_by_subtank: dict) -> dict:
+    """
+    Two-level allocation:
+      Level 1: master tank -> sub-tanks, ranked by each sub-tank's
+               cumulative dependent vulnerability.
+      Level 2: each sub-tank's OWN received water -> its dependent flats,
+               using the exact same run_allocation() as a single-tank system.
+
+    master_state: {"available_supply_l": float, "status": "normal"|"crisis"}
+    sub_tanks: [{"sub_tank_id": str, "name": str,
+                 "tank_level_pct": float, "tank_capacity_l": float}, ...]
+    flats_by_subtank: {sub_tank_id: [flat_dict, ...], ...}
+    """
+    pseudo_flats = [
+        build_subtank_pseudo_flat(st, flats_by_subtank.get(st["sub_tank_id"], []))
+        for st in sub_tanks
+    ]
+
+    # Level 1 - master tank distributes across sub-tanks. Literally the
+    # same run_allocation() used for flats; no separate code path.
+    level1_result = run_allocation(pseudo_flats, master_state)
+    level1_by_id = {a["flat_id"]: a for a in level1_result["allocations"]}
+
+    # Level 2 - each sub-tank distributes what IT received across its
+    # dependent flats. Same function again, called once per sub-tank.
+    level2_results = {}
+    for st in sub_tanks:
+        stid = st["sub_tank_id"]
+        received = level1_by_id.get(stid, {}).get("allocated_l", 0.0)
+        dependents = flats_by_subtank.get(stid, [])
+        subtank_state = {"available_supply_l": received, "status": master_state["status"]}
+        if dependents:
+            level2_results[stid] = run_allocation(dependents, subtank_state)
+        else:
+            level2_results[stid] = {
+                "allocations": [], "total_allocated_l": 0.0, "total_need_l": 0.0,
+                "total_raw_need_l": 0.0, "total_survival_floor_l": 0.0,
+                "supply_l": received, "bottleneck": "none", "status": master_state["status"],
+            }
+
+    return {
+        "master_supply_l": master_state["available_supply_l"],
+        "master_status": master_state["status"],
+        "sub_tank_allocation": level1_result,      # master -> sub-tanks
+        "flat_allocation_by_subtank": level2_results,  # sub-tank -> flats, per sub-tank
+    }
+
+
 if __name__ == "__main__":
     sample_flats = [
         {"flat_id": "F1", "medical_flag": True, "elderly_count": 0, "children_count": 0,
@@ -425,4 +543,3 @@ if __name__ == "__main__":
     sample_state = {"available_supply_l": 600, "status": "crisis"}
     import json
     print(json.dumps(run_allocation(sample_flats, sample_state), indent=2))
-

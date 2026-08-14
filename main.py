@@ -5,12 +5,14 @@ Run:
     uvicorn main:app --reload
 
 Endpoints:
-    GET  /flats             -> all 12 flats, current state
-    GET  /system-status      -> the singleton system_state doc
-    POST /allocate           -> runs the Max-Flow Min-Cut engine, logs + returns result
-    GET  /allocation-log      -> latest logged allocations (for the dashboard)
-    POST /crisis/trigger      -> halves available supply + flips status to "crisis"
-    POST /crisis/reset        -> restores supply to normal, status back to "normal"
+    GET  /flats                  -> all flats, current state
+    GET  /system-status           -> the singleton system_state doc (master tank)
+    POST /allocate                -> single-tank allocation (flat-only mode)
+    GET  /allocation-log           -> latest logged single-tank allocations
+    POST /crisis/trigger           -> halves available supply + flips status to "crisis"
+    POST /crisis/reset             -> restores supply to normal, status back to "normal"
+    GET  /sub-tanks                -> all sub-tank definitions
+    POST /allocate/hierarchical    -> two-level allocation: master -> sub-tanks -> flats
 """
 
 import os
@@ -20,7 +22,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pymongo import MongoClient
 from dotenv import load_dotenv
 
-from engine import run_allocation
+from engine import run_allocation, run_hierarchical_allocation
 
 load_dotenv()
 
@@ -109,3 +111,42 @@ def reset_crisis():
         {"$set": {"available_supply_l": 3000, "status": "normal"}},
     )
     return _no_id(db.system_state.find_one({}))
+
+
+@app.get("/sub-tanks")
+def get_sub_tanks():
+    sub_tanks = [_no_id(st) for st in db.sub_tanks.find({})]
+    return {"sub_tanks": sub_tanks, "count": len(sub_tanks)}
+
+
+@app.post("/allocate/hierarchical")
+def allocate_hierarchical():
+    """
+    Two-level allocation: the master tank (system_state) distributes across
+    sub-tanks by their dependents' cumulative vulnerability, then each
+    sub-tank distributes what IT received across its own flats - same
+    run_allocation() logic at both levels, see engine.run_hierarchical_allocation.
+    """
+    flats = [_no_id(f) for f in db.flats.find({})]
+    sub_tanks = [_no_id(st) for st in db.sub_tanks.find({})]
+    master_state = _no_id(db.system_state.find_one({}))
+
+    if not flats or not sub_tanks or not master_state:
+        raise HTTPException(status_code=404, detail="Data not seeded yet — run seed.py first")
+
+    flats_by_subtank = {}
+    for f in flats:
+        flats_by_subtank.setdefault(f.get("sub_tank_id"), []).append(f)
+
+    result = run_hierarchical_allocation(master_state, sub_tanks, flats_by_subtank)
+
+    # Log every flat-level allocation across all sub-tanks in one place,
+    # tagged with which sub-tank it came from, for dashboard/history use.
+    db.allocation_log.delete_many({})
+    for stid, sub_result in result["flat_allocation_by_subtank"].items():
+        for entry in sub_result["allocations"]:
+            entry_with_tank = dict(entry)
+            entry_with_tank["sub_tank_id"] = stid
+            db.allocation_log.insert_one(entry_with_tank)
+
+    return result

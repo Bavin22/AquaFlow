@@ -26,6 +26,7 @@ with open("seed_data.json", "r") as f:
 db.flats.delete_many({})
 db.system_state.delete_many({})
 db.allocation_log.delete_many({})
+db.sub_tanks.delete_many({})
 
 flats_result = db.flats.insert_many(data["flats"])
 print(f"Inserted {len(flats_result.inserted_ids)} flats into '{DB_NAME}.flats'")
@@ -33,5 +34,8 @@ print(f"Inserted {len(flats_result.inserted_ids)} flats into '{DB_NAME}.flats'")
 db.system_state.insert_one(data["system_state"])
 print(f"Inserted system_state doc into '{DB_NAME}.system_state'")
 
-print("Seed complete. allocation_log left empty — it fills up as you call /allocate.")
+if "sub_tanks" in data:
+    subtanks_result = db.sub_tanks.insert_many(data["sub_tanks"])
+    print(f"Inserted {len(subtanks_result.inserted_ids)} sub_tanks into '{DB_NAME}.sub_tanks'")
 
+print("Seed complete. allocation_log left empty — it fills up as you call /allocate.")

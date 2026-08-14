@@ -31,7 +31,8 @@
           "day": "Fri",
           "used_l": 296
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F2",
@@ -64,7 +65,8 @@
           "day": "Fri",
           "used_l": 517
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F3",
@@ -97,7 +99,8 @@
           "day": "Fri",
           "used_l": 1106
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F4",
@@ -130,7 +133,8 @@
           "day": "Fri",
           "used_l": 1048
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F5",
@@ -163,7 +167,8 @@
           "day": "Fri",
           "used_l": 275
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F6",
@@ -196,7 +201,8 @@
           "day": "Fri",
           "used_l": 291
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F7",
@@ -229,7 +235,8 @@
           "day": "Fri",
           "used_l": 1009
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F8",
@@ -262,7 +269,8 @@
           "day": "Fri",
           "used_l": 544
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F9",
@@ -295,7 +303,8 @@
           "day": "Fri",
           "used_l": 870
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F10",
@@ -328,7 +337,8 @@
           "day": "Fri",
           "used_l": 601
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F11",
@@ -361,7 +371,8 @@
           "day": "Fri",
           "used_l": 549
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F12",
@@ -394,7 +405,8 @@
           "day": "Fri",
           "used_l": 567
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F13",
@@ -427,7 +439,8 @@
           "day": "Fri",
           "used_l": 299
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F14",
@@ -460,7 +473,8 @@
           "day": "Fri",
           "used_l": 594
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F15",
@@ -493,7 +507,8 @@
           "day": "Fri",
           "used_l": 183
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F16",
@@ -526,7 +541,8 @@
           "day": "Fri",
           "used_l": 427
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F17",
@@ -559,7 +575,8 @@
           "day": "Fri",
           "used_l": 568
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F18",
@@ -592,7 +609,8 @@
           "day": "Fri",
           "used_l": 917
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F19",
@@ -625,7 +643,8 @@
           "day": "Fri",
           "used_l": 851
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F20",
@@ -658,7 +677,8 @@
           "day": "Fri",
           "used_l": 1200
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F21",
@@ -691,7 +711,8 @@
           "day": "Fri",
           "used_l": 323
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F22",
@@ -724,7 +745,8 @@
           "day": "Fri",
           "used_l": 1137
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F23",
@@ -757,7 +779,8 @@
           "day": "Fri",
           "used_l": 189
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F24",
@@ -790,7 +813,8 @@
           "day": "Fri",
           "used_l": 861
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F25",
@@ -823,7 +847,8 @@
           "day": "Fri",
           "used_l": 270
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F26",
@@ -856,7 +881,8 @@
           "day": "Fri",
           "used_l": 1308
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F27",
@@ -889,7 +915,8 @@
           "day": "Fri",
           "used_l": 1195
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F28",
@@ -922,7 +949,8 @@
           "day": "Fri",
           "used_l": 790
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F29",
@@ -955,7 +983,8 @@
           "day": "Fri",
           "used_l": 578
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F30",
@@ -988,7 +1017,8 @@
           "day": "Fri",
           "used_l": 386
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F31",
@@ -1021,7 +1051,8 @@
           "day": "Fri",
           "used_l": 892
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F32",
@@ -1054,7 +1085,8 @@
           "day": "Fri",
           "used_l": 833
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F33",
@@ -1087,7 +1119,8 @@
           "day": "Fri",
           "used_l": 187
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F34",
@@ -1120,7 +1153,8 @@
           "day": "Fri",
           "used_l": 550
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F35",
@@ -1153,7 +1187,8 @@
           "day": "Fri",
           "used_l": 475
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F36",
@@ -1186,7 +1221,8 @@
           "day": "Fri",
           "used_l": 358
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F37",
@@ -1219,7 +1255,8 @@
           "day": "Fri",
           "used_l": 533
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F38",
@@ -1252,7 +1289,8 @@
           "day": "Fri",
           "used_l": 714
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F39",
@@ -1285,7 +1323,8 @@
           "day": "Fri",
           "used_l": 178
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F40",
@@ -1318,7 +1357,8 @@
           "day": "Fri",
           "used_l": 972
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F41",
@@ -1351,7 +1391,8 @@
           "day": "Fri",
           "used_l": 260
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F42",
@@ -1384,7 +1425,8 @@
           "day": "Fri",
           "used_l": 190
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F43",
@@ -1417,7 +1459,8 @@
           "day": "Fri",
           "used_l": 190
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F44",
@@ -1450,7 +1493,8 @@
           "day": "Fri",
           "used_l": 982
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F45",
@@ -1483,7 +1527,8 @@
           "day": "Fri",
           "used_l": 510
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F46",
@@ -1516,7 +1561,8 @@
           "day": "Fri",
           "used_l": 322
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F47",
@@ -1549,7 +1595,8 @@
           "day": "Fri",
           "used_l": 278
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F48",
@@ -1582,7 +1629,8 @@
           "day": "Fri",
           "used_l": 1103
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F49",
@@ -1615,7 +1663,8 @@
           "day": "Fri",
           "used_l": 451
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F50",
@@ -1648,7 +1697,8 @@
           "day": "Fri",
           "used_l": 324
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F51",
@@ -1681,7 +1731,8 @@
           "day": "Fri",
           "used_l": 571
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F52",
@@ -1714,7 +1765,8 @@
           "day": "Fri",
           "used_l": 539
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F53",
@@ -1747,7 +1799,8 @@
           "day": "Fri",
           "used_l": 747
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F54",
@@ -1780,7 +1833,8 @@
           "day": "Fri",
           "used_l": 440
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F55",
@@ -1813,7 +1867,8 @@
           "day": "Fri",
           "used_l": 910
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F56",
@@ -1846,7 +1901,8 @@
           "day": "Fri",
           "used_l": 182
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F57",
@@ -1879,7 +1935,8 @@
           "day": "Fri",
           "used_l": 1041
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F58",
@@ -1912,7 +1969,8 @@
           "day": "Fri",
           "used_l": 664
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F59",
@@ -1945,7 +2003,8 @@
           "day": "Fri",
           "used_l": 961
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F60",
@@ -1978,7 +2037,8 @@
           "day": "Fri",
           "used_l": 949
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F61",
@@ -2011,7 +2071,8 @@
           "day": "Fri",
           "used_l": 585
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F62",
@@ -2044,7 +2105,8 @@
           "day": "Fri",
           "used_l": 600
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F63",
@@ -2077,7 +2139,8 @@
           "day": "Fri",
           "used_l": 371
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F64",
@@ -2110,7 +2173,8 @@
           "day": "Fri",
           "used_l": 491
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F65",
@@ -2143,7 +2207,8 @@
           "day": "Fri",
           "used_l": 390
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F66",
@@ -2176,7 +2241,8 @@
           "day": "Fri",
           "used_l": 413
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F67",
@@ -2209,7 +2275,8 @@
           "day": "Fri",
           "used_l": 413
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F68",
@@ -2242,7 +2309,8 @@
           "day": "Fri",
           "used_l": 386
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F69",
@@ -2275,7 +2343,8 @@
           "day": "Fri",
           "used_l": 915
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F70",
@@ -2308,7 +2377,8 @@
           "day": "Fri",
           "used_l": 151
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F71",
@@ -2341,7 +2411,8 @@
           "day": "Fri",
           "used_l": 190
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F72",
@@ -2374,7 +2445,8 @@
           "day": "Fri",
           "used_l": 356
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F73",
@@ -2407,7 +2479,8 @@
           "day": "Fri",
           "used_l": 682
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F74",
@@ -2440,7 +2513,8 @@
           "day": "Fri",
           "used_l": 699
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F75",
@@ -2473,7 +2547,8 @@
           "day": "Fri",
           "used_l": 283
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F76",
@@ -2506,7 +2581,8 @@
           "day": "Fri",
           "used_l": 299
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F77",
@@ -2539,7 +2615,8 @@
           "day": "Fri",
           "used_l": 746
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F78",
@@ -2572,7 +2649,8 @@
           "day": "Fri",
           "used_l": 844
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F79",
@@ -2605,7 +2683,8 @@
           "day": "Fri",
           "used_l": 169
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F80",
@@ -2638,7 +2717,8 @@
           "day": "Fri",
           "used_l": 716
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F81",
@@ -2671,7 +2751,8 @@
           "day": "Fri",
           "used_l": 930
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F82",
@@ -2704,7 +2785,8 @@
           "day": "Fri",
           "used_l": 704
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F83",
@@ -2737,7 +2819,8 @@
           "day": "Fri",
           "used_l": 502
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F84",
@@ -2770,7 +2853,8 @@
           "day": "Fri",
           "used_l": 784
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F85",
@@ -2803,7 +2887,8 @@
           "day": "Fri",
           "used_l": 1113
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F86",
@@ -2836,7 +2921,8 @@
           "day": "Fri",
           "used_l": 594
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F87",
@@ -2869,7 +2955,8 @@
           "day": "Fri",
           "used_l": 792
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F88",
@@ -2902,7 +2989,8 @@
           "day": "Fri",
           "used_l": 996
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F89",
@@ -2935,7 +3023,8 @@
           "day": "Fri",
           "used_l": 677
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F90",
@@ -2968,7 +3057,8 @@
           "day": "Fri",
           "used_l": 867
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F91",
@@ -3001,7 +3091,8 @@
           "day": "Fri",
           "used_l": 348
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F92",
@@ -3034,7 +3125,8 @@
           "day": "Fri",
           "used_l": 489
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F93",
@@ -3067,7 +3159,8 @@
           "day": "Fri",
           "used_l": 289
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F94",
@@ -3100,7 +3193,8 @@
           "day": "Fri",
           "used_l": 621
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F95",
@@ -3133,7 +3227,8 @@
           "day": "Fri",
           "used_l": 632
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F96",
@@ -3166,7 +3261,8 @@
           "day": "Fri",
           "used_l": 371
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F97",
@@ -3199,7 +3295,8 @@
           "day": "Fri",
           "used_l": 749
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F98",
@@ -3232,7 +3329,8 @@
           "day": "Fri",
           "used_l": 573
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F99",
@@ -3265,7 +3363,8 @@
           "day": "Fri",
           "used_l": 352
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F100",
@@ -3298,7 +3397,8 @@
           "day": "Fri",
           "used_l": 172
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F101",
@@ -3331,7 +3431,8 @@
           "day": "Fri",
           "used_l": 169
         }
-      ]
+      ],
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F102",
@@ -3364,7 +3465,8 @@
           "day": "Fri",
           "used_l": 558
         }
-      ]
+      ],
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F103",
@@ -3397,7 +3499,8 @@
           "day": "Fri",
           "used_l": 999
         }
-      ]
+      ],
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F104",
@@ -3430,7 +3533,8 @@
           "day": "Fri",
           "used_l": 623
         }
-      ]
+      ],
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F105",
@@ -3463,12 +3567,45 @@
           "day": "Fri",
           "used_l": 878
         }
-      ]
+      ],
+      "sub_tank_id": "T5"
     }
   ],
   "system_state": {
     "available_supply_l": 28000,
     "capacity_l": 50600,
     "status": "normal"
-  }
+  },
+  "sub_tanks": [
+    {
+      "sub_tank_id": "T1",
+      "name": "Block A Tank",
+      "tank_capacity_l": 6000,
+      "tank_level_pct": 55
+    },
+    {
+      "sub_tank_id": "T2",
+      "name": "Block B Tank",
+      "tank_capacity_l": 5500,
+      "tank_level_pct": 30
+    },
+    {
+      "sub_tank_id": "T3",
+      "name": "Block C Tank",
+      "tank_capacity_l": 6500,
+      "tank_level_pct": 65
+    },
+    {
+      "sub_tank_id": "T4",
+      "name": "Block D Tank",
+      "tank_capacity_l": 5000,
+      "tank_level_pct": 40
+    },
+    {
+      "sub_tank_id": "T5",
+      "name": "Block E Tank",
+      "tank_capacity_l": 5600,
+      "tank_level_pct": 50
+    }
+  ]
 }

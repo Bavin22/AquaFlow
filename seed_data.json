@@ -32,17 +32,7 @@
           "used_l": 296
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 1,
-      "x_coord": 10,
-      "y_coord": 15,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2020.92,
-      "cumulative_need_l": 2887.03,
-      "tank_sensor_confidence": 0.92,
-      "usage_sensor_confidence": 0.81,
-      "data_age_minutes": 9
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F2",
@@ -76,17 +66,7 @@
           "used_l": 517
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 1,
-      "x_coord": 33,
-      "y_coord": 18,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 3052.0,
-      "cumulative_need_l": 3052.0,
-      "tank_sensor_confidence": 0.73,
-      "usage_sensor_confidence": 0.85,
-      "data_age_minutes": 2
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F3",
@@ -120,17 +100,7 @@
           "used_l": 1106
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 1,
-      "x_coord": 56,
-      "y_coord": 21,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1567.42,
-      "cumulative_need_l": 1959.28,
-      "tank_sensor_confidence": 0.85,
-      "usage_sensor_confidence": 0.76,
-      "data_age_minutes": 13
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F4",
@@ -164,17 +134,7 @@
           "used_l": 1048
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 1,
-      "x_coord": 79,
-      "y_coord": 15,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 3017.23,
-      "cumulative_need_l": 3017.23,
-      "tank_sensor_confidence": 0.82,
-      "usage_sensor_confidence": 0.86,
-      "data_age_minutes": 18
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F5",
@@ -208,17 +168,7 @@
           "used_l": 275
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 1,
-      "x_coord": 90,
-      "y_coord": 18,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2223.22,
-      "cumulative_need_l": 3176.03,
-      "tank_sensor_confidence": 0.92,
-      "usage_sensor_confidence": 0.79,
-      "data_age_minutes": 28
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F6",
@@ -252,17 +202,7 @@
           "used_l": 291
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 1,
-      "x_coord": 13,
-      "y_coord": 21,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1902.74,
-      "cumulative_need_l": 2378.43,
-      "tank_sensor_confidence": 0.76,
-      "usage_sensor_confidence": 0.93,
-      "data_age_minutes": 7
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F7",
@@ -296,17 +236,7 @@
           "used_l": 1009
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 1,
-      "x_coord": 36,
-      "y_coord": 15,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1370.37,
-      "cumulative_need_l": 1957.67,
-      "tank_sensor_confidence": 0.8,
-      "usage_sensor_confidence": 0.83,
-      "data_age_minutes": 17
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F8",
@@ -340,17 +270,7 @@
           "used_l": 544
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 1,
-      "x_coord": 59,
-      "y_coord": 18,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 3013.51,
-      "cumulative_need_l": 3172.12,
-      "tank_sensor_confidence": 0.86,
-      "usage_sensor_confidence": 0.98,
-      "data_age_minutes": 25
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F9",
@@ -384,17 +304,7 @@
           "used_l": 870
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 1,
-      "x_coord": 70,
-      "y_coord": 21,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1740.56,
-      "cumulative_need_l": 1933.96,
-      "tank_sensor_confidence": 0.94,
-      "usage_sensor_confidence": 0.9,
-      "data_age_minutes": 24
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F10",
@@ -428,17 +338,7 @@
           "used_l": 601
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 1,
-      "x_coord": 93,
-      "y_coord": 15,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1947.05,
-      "cumulative_need_l": 2781.5,
-      "tank_sensor_confidence": 0.71,
-      "usage_sensor_confidence": 0.8,
-      "data_age_minutes": 19
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F11",
@@ -472,17 +372,7 @@
           "used_l": 549
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 1,
-      "x_coord": 16,
-      "y_coord": 18,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2779.9,
-      "cumulative_need_l": 3474.88,
-      "tank_sensor_confidence": 0.95,
-      "usage_sensor_confidence": 0.84,
-      "data_age_minutes": 30
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F12",
@@ -516,17 +406,7 @@
           "used_l": 567
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 1,
-      "x_coord": 39,
-      "y_coord": 21,
-      "anomaly_triggered": true,
-      "cumulative_allocated_l": 2592.59,
-      "cumulative_need_l": 2880.66,
-      "tank_sensor_confidence": 0.75,
-      "usage_sensor_confidence": 0.84,
-      "data_age_minutes": 43
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F13",
@@ -560,17 +440,7 @@
           "used_l": 299
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 1,
-      "x_coord": 50,
-      "y_coord": 15,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1577.7,
-      "cumulative_need_l": 2253.86,
-      "tank_sensor_confidence": 0.88,
-      "usage_sensor_confidence": 0.79,
-      "data_age_minutes": 16
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F14",
@@ -604,17 +474,7 @@
           "used_l": 594
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 1,
-      "x_coord": 73,
-      "y_coord": 18,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1973.89,
-      "cumulative_need_l": 2077.78,
-      "tank_sensor_confidence": 0.78,
-      "usage_sensor_confidence": 0.97,
-      "data_age_minutes": 45
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F15",
@@ -648,17 +508,7 @@
           "used_l": 183
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 1,
-      "x_coord": 96,
-      "y_coord": 21,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2472.13,
-      "cumulative_need_l": 2746.81,
-      "tank_sensor_confidence": 0.94,
-      "usage_sensor_confidence": 0.94,
-      "data_age_minutes": 15
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F16",
@@ -692,17 +542,7 @@
           "used_l": 427
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 1,
-      "x_coord": 19,
-      "y_coord": 15,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2877.35,
-      "cumulative_need_l": 3197.06,
-      "tank_sensor_confidence": 0.82,
-      "usage_sensor_confidence": 0.77,
-      "data_age_minutes": 37
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F17",
@@ -736,17 +576,7 @@
           "used_l": 568
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 1,
-      "x_coord": 30,
-      "y_coord": 18,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2960.84,
-      "cumulative_need_l": 3289.82,
-      "tank_sensor_confidence": 0.76,
-      "usage_sensor_confidence": 0.87,
-      "data_age_minutes": 42
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F18",
@@ -780,17 +610,7 @@
           "used_l": 917
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 1,
-      "x_coord": 53,
-      "y_coord": 21,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2322.05,
-      "cumulative_need_l": 2580.05,
-      "tank_sensor_confidence": 0.74,
-      "usage_sensor_confidence": 0.93,
-      "data_age_minutes": 35
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F19",
@@ -824,17 +644,7 @@
           "used_l": 851
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 1,
-      "x_coord": 76,
-      "y_coord": 15,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2246.66,
-      "cumulative_need_l": 2246.66,
-      "tank_sensor_confidence": 0.82,
-      "usage_sensor_confidence": 0.89,
-      "data_age_minutes": 24
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F20",
@@ -868,17 +678,7 @@
           "used_l": 1200
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 1,
-      "x_coord": 99,
-      "y_coord": 18,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1738.28,
-      "cumulative_need_l": 2172.85,
-      "tank_sensor_confidence": 0.85,
-      "usage_sensor_confidence": 0.77,
-      "data_age_minutes": 4
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F21",
@@ -912,17 +712,7 @@
           "used_l": 323
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 1,
-      "x_coord": 10,
-      "y_coord": 21,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2611.1,
-      "cumulative_need_l": 3263.87,
-      "tank_sensor_confidence": 0.88,
-      "usage_sensor_confidence": 0.94,
-      "data_age_minutes": 28
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F22",
@@ -956,17 +746,7 @@
           "used_l": 1137
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 1,
-      "x_coord": 33,
-      "y_coord": 15,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2673.2,
-      "cumulative_need_l": 2813.9,
-      "tank_sensor_confidence": 0.81,
-      "usage_sensor_confidence": 0.99,
-      "data_age_minutes": 34
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F23",
@@ -1000,17 +780,7 @@
           "used_l": 189
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 1,
-      "x_coord": 56,
-      "y_coord": 18,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2227.4,
-      "cumulative_need_l": 2227.4,
-      "tank_sensor_confidence": 0.95,
-      "usage_sensor_confidence": 0.75,
-      "data_age_minutes": 8
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F24",
@@ -1044,17 +814,7 @@
           "used_l": 861
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 1,
-      "x_coord": 79,
-      "y_coord": 21,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2958.91,
-      "cumulative_need_l": 2958.91,
-      "tank_sensor_confidence": 0.92,
-      "usage_sensor_confidence": 0.93,
-      "data_age_minutes": 22
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F25",
@@ -1088,17 +848,7 @@
           "used_l": 270
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 1,
-      "x_coord": 90,
-      "y_coord": 15,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1890.16,
-      "cumulative_need_l": 1989.64,
-      "tank_sensor_confidence": 0.75,
-      "usage_sensor_confidence": 0.75,
-      "data_age_minutes": 17
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F26",
@@ -1132,17 +882,7 @@
           "used_l": 1308
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 1,
-      "x_coord": 13,
-      "y_coord": 18,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2761.77,
-      "cumulative_need_l": 3452.21,
-      "tank_sensor_confidence": 0.85,
-      "usage_sensor_confidence": 0.78,
-      "data_age_minutes": 41
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F27",
@@ -1176,17 +916,7 @@
           "used_l": 1195
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 1,
-      "x_coord": 36,
-      "y_coord": 21,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2307.36,
-      "cumulative_need_l": 2307.36,
-      "tank_sensor_confidence": 0.88,
-      "usage_sensor_confidence": 0.79,
-      "data_age_minutes": 11
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F28",
@@ -1220,17 +950,7 @@
           "used_l": 790
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 2,
-      "x_coord": 59,
-      "y_coord": 30,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2716.94,
-      "cumulative_need_l": 2716.94,
-      "tank_sensor_confidence": 0.97,
-      "usage_sensor_confidence": 0.89,
-      "data_age_minutes": 32
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F29",
@@ -1264,17 +984,7 @@
           "used_l": 578
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 2,
-      "x_coord": 70,
-      "y_coord": 33,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1649.8,
-      "cumulative_need_l": 1833.11,
-      "tank_sensor_confidence": 0.95,
-      "usage_sensor_confidence": 0.95,
-      "data_age_minutes": 20
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F30",
@@ -1308,17 +1018,7 @@
           "used_l": 386
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 2,
-      "x_coord": 93,
-      "y_coord": 36,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1765.66,
-      "cumulative_need_l": 2207.07,
-      "tank_sensor_confidence": 0.95,
-      "usage_sensor_confidence": 0.98,
-      "data_age_minutes": 6
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F31",
@@ -1352,17 +1052,7 @@
           "used_l": 892
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 2,
-      "x_coord": 16,
-      "y_coord": 30,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2130.97,
-      "cumulative_need_l": 3044.24,
-      "tank_sensor_confidence": 0.98,
-      "usage_sensor_confidence": 0.88,
-      "data_age_minutes": 9
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F32",
@@ -1396,17 +1086,7 @@
           "used_l": 833
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 2,
-      "x_coord": 39,
-      "y_coord": 33,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1917.36,
-      "cumulative_need_l": 2018.27,
-      "tank_sensor_confidence": 0.97,
-      "usage_sensor_confidence": 0.79,
-      "data_age_minutes": 34
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F33",
@@ -1440,17 +1120,7 @@
           "used_l": 187
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 2,
-      "x_coord": 50,
-      "y_coord": 36,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 3118.98,
-      "cumulative_need_l": 3283.14,
-      "tank_sensor_confidence": 0.98,
-      "usage_sensor_confidence": 0.97,
-      "data_age_minutes": 45
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F34",
@@ -1484,17 +1154,7 @@
           "used_l": 550
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 2,
-      "x_coord": 73,
-      "y_coord": 30,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1927.76,
-      "cumulative_need_l": 2141.96,
-      "tank_sensor_confidence": 0.82,
-      "usage_sensor_confidence": 0.91,
-      "data_age_minutes": 24
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F35",
@@ -1528,17 +1188,7 @@
           "used_l": 475
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 2,
-      "x_coord": 96,
-      "y_coord": 33,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2544.77,
-      "cumulative_need_l": 2544.77,
-      "tank_sensor_confidence": 0.83,
-      "usage_sensor_confidence": 0.81,
-      "data_age_minutes": 5
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F36",
@@ -1572,17 +1222,7 @@
           "used_l": 358
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 2,
-      "x_coord": 19,
-      "y_coord": 36,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2374.75,
-      "cumulative_need_l": 2374.75,
-      "tank_sensor_confidence": 0.86,
-      "usage_sensor_confidence": 0.89,
-      "data_age_minutes": 1
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F37",
@@ -1616,17 +1256,7 @@
           "used_l": 533
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 2,
-      "x_coord": 30,
-      "y_coord": 30,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1344.48,
-      "cumulative_need_l": 1920.69,
-      "tank_sensor_confidence": 0.77,
-      "usage_sensor_confidence": 0.97,
-      "data_age_minutes": 22
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F38",
@@ -1660,17 +1290,7 @@
           "used_l": 714
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 2,
-      "x_coord": 53,
-      "y_coord": 33,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1536.37,
-      "cumulative_need_l": 1920.46,
-      "tank_sensor_confidence": 0.78,
-      "usage_sensor_confidence": 0.87,
-      "data_age_minutes": 35
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F39",
@@ -1704,17 +1324,7 @@
           "used_l": 178
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 2,
-      "x_coord": 76,
-      "y_coord": 36,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2024.93,
-      "cumulative_need_l": 2024.93,
-      "tank_sensor_confidence": 0.87,
-      "usage_sensor_confidence": 0.81,
-      "data_age_minutes": 31
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F40",
@@ -1748,17 +1358,7 @@
           "used_l": 972
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 2,
-      "x_coord": 99,
-      "y_coord": 30,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2538.19,
-      "cumulative_need_l": 3172.74,
-      "tank_sensor_confidence": 0.73,
-      "usage_sensor_confidence": 0.91,
-      "data_age_minutes": 23
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F41",
@@ -1792,17 +1392,7 @@
           "used_l": 260
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 2,
-      "x_coord": 10,
-      "y_coord": 33,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2394.08,
-      "cumulative_need_l": 2520.08,
-      "tank_sensor_confidence": 0.95,
-      "usage_sensor_confidence": 0.76,
-      "data_age_minutes": 42
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F42",
@@ -1836,17 +1426,7 @@
           "used_l": 190
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 2,
-      "x_coord": 33,
-      "y_coord": 36,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2431.16,
-      "cumulative_need_l": 3473.08,
-      "tank_sensor_confidence": 0.72,
-      "usage_sensor_confidence": 0.92,
-      "data_age_minutes": 7
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F43",
@@ -1880,17 +1460,7 @@
           "used_l": 190
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 2,
-      "x_coord": 56,
-      "y_coord": 30,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1778.18,
-      "cumulative_need_l": 2222.72,
-      "tank_sensor_confidence": 0.86,
-      "usage_sensor_confidence": 0.78,
-      "data_age_minutes": 12
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F44",
@@ -1924,17 +1494,7 @@
           "used_l": 982
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 2,
-      "x_coord": 79,
-      "y_coord": 33,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1818.82,
-      "cumulative_need_l": 2273.53,
-      "tank_sensor_confidence": 0.95,
-      "usage_sensor_confidence": 0.77,
-      "data_age_minutes": 36
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F45",
@@ -1968,17 +1528,7 @@
           "used_l": 510
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 2,
-      "x_coord": 90,
-      "y_coord": 36,
-      "anomaly_triggered": true,
-      "cumulative_allocated_l": 1966.44,
-      "cumulative_need_l": 1966.44,
-      "tank_sensor_confidence": 0.94,
-      "usage_sensor_confidence": 0.98,
-      "data_age_minutes": 16
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F46",
@@ -2012,17 +1562,7 @@
           "used_l": 322
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 2,
-      "x_coord": 13,
-      "y_coord": 30,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1978.59,
-      "cumulative_need_l": 2082.73,
-      "tank_sensor_confidence": 0.84,
-      "usage_sensor_confidence": 0.96,
-      "data_age_minutes": 4
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F47",
@@ -2056,17 +1596,7 @@
           "used_l": 278
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 2,
-      "x_coord": 36,
-      "y_coord": 33,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1455.92,
-      "cumulative_need_l": 2079.88,
-      "tank_sensor_confidence": 0.99,
-      "usage_sensor_confidence": 0.81,
-      "data_age_minutes": 30
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F48",
@@ -2100,17 +1630,7 @@
           "used_l": 1103
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 2,
-      "x_coord": 59,
-      "y_coord": 36,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2284.92,
-      "cumulative_need_l": 2284.92,
-      "tank_sensor_confidence": 0.89,
-      "usage_sensor_confidence": 0.87,
-      "data_age_minutes": 13
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F49",
@@ -2144,17 +1664,7 @@
           "used_l": 451
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 2,
-      "x_coord": 70,
-      "y_coord": 30,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1613.08,
-      "cumulative_need_l": 2304.4,
-      "tank_sensor_confidence": 0.87,
-      "usage_sensor_confidence": 0.88,
-      "data_age_minutes": 21
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F50",
@@ -2188,17 +1698,7 @@
           "used_l": 324
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 2,
-      "x_coord": 93,
-      "y_coord": 33,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1897.18,
-      "cumulative_need_l": 1897.18,
-      "tank_sensor_confidence": 0.84,
-      "usage_sensor_confidence": 0.97,
-      "data_age_minutes": 34
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F51",
@@ -2232,17 +1732,7 @@
           "used_l": 571
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 2,
-      "x_coord": 16,
-      "y_coord": 36,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2067.64,
-      "cumulative_need_l": 2067.64,
-      "tank_sensor_confidence": 0.72,
-      "usage_sensor_confidence": 0.79,
-      "data_age_minutes": 39
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F52",
@@ -2276,17 +1766,7 @@
           "used_l": 539
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 2,
-      "x_coord": 39,
-      "y_coord": 30,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1532.42,
-      "cumulative_need_l": 1915.53,
-      "tank_sensor_confidence": 0.82,
-      "usage_sensor_confidence": 0.98,
-      "data_age_minutes": 37
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F53",
@@ -2320,17 +1800,7 @@
           "used_l": 747
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 2,
-      "x_coord": 50,
-      "y_coord": 33,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2218.57,
-      "cumulative_need_l": 2218.57,
-      "tank_sensor_confidence": 0.71,
-      "usage_sensor_confidence": 0.77,
-      "data_age_minutes": 43
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F54",
@@ -2364,17 +1834,7 @@
           "used_l": 440
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 2,
-      "x_coord": 73,
-      "y_coord": 36,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2792.24,
-      "cumulative_need_l": 2792.24,
-      "tank_sensor_confidence": 0.79,
-      "usage_sensor_confidence": 0.81,
-      "data_age_minutes": 43
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F55",
@@ -2408,17 +1868,7 @@
           "used_l": 910
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 2,
-      "x_coord": 96,
-      "y_coord": 30,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2414.02,
-      "cumulative_need_l": 3017.53,
-      "tank_sensor_confidence": 0.78,
-      "usage_sensor_confidence": 0.78,
-      "data_age_minutes": 42
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F56",
@@ -2452,17 +1902,7 @@
           "used_l": 182
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 2,
-      "x_coord": 19,
-      "y_coord": 33,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2079.0,
-      "cumulative_need_l": 2310.0,
-      "tank_sensor_confidence": 0.97,
-      "usage_sensor_confidence": 0.97,
-      "data_age_minutes": 1
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F57",
@@ -2496,17 +1936,7 @@
           "used_l": 1041
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 2,
-      "x_coord": 30,
-      "y_coord": 36,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2579.09,
-      "cumulative_need_l": 2579.09,
-      "tank_sensor_confidence": 0.99,
-      "usage_sensor_confidence": 0.77,
-      "data_age_minutes": 14
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F58",
@@ -2540,17 +1970,7 @@
           "used_l": 664
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 2,
-      "x_coord": 53,
-      "y_coord": 30,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2128.0,
-      "cumulative_need_l": 2660.0,
-      "tank_sensor_confidence": 0.97,
-      "usage_sensor_confidence": 0.96,
-      "data_age_minutes": 16
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F59",
@@ -2584,17 +2004,7 @@
           "used_l": 961
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 2,
-      "x_coord": 76,
-      "y_coord": 33,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1942.56,
-      "cumulative_need_l": 2428.2,
-      "tank_sensor_confidence": 0.83,
-      "usage_sensor_confidence": 0.88,
-      "data_age_minutes": 20
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F60",
@@ -2628,17 +2038,7 @@
           "used_l": 949
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 3,
-      "x_coord": 99,
-      "y_coord": 51,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2839.85,
-      "cumulative_need_l": 2839.85,
-      "tank_sensor_confidence": 0.7,
-      "usage_sensor_confidence": 0.95,
-      "data_age_minutes": 20
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F61",
@@ -2672,17 +2072,7 @@
           "used_l": 585
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 3,
-      "x_coord": 10,
-      "y_coord": 45,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2368.79,
-      "cumulative_need_l": 3383.99,
-      "tank_sensor_confidence": 0.97,
-      "usage_sensor_confidence": 0.78,
-      "data_age_minutes": 8
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F62",
@@ -2716,17 +2106,7 @@
           "used_l": 600
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 3,
-      "x_coord": 33,
-      "y_coord": 48,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 3312.51,
-      "cumulative_need_l": 3312.51,
-      "tank_sensor_confidence": 0.75,
-      "usage_sensor_confidence": 0.82,
-      "data_age_minutes": 14
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F63",
@@ -2760,17 +2140,7 @@
           "used_l": 371
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 3,
-      "x_coord": 56,
-      "y_coord": 51,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2415.95,
-      "cumulative_need_l": 3019.94,
-      "tank_sensor_confidence": 0.9,
-      "usage_sensor_confidence": 0.95,
-      "data_age_minutes": 33
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F64",
@@ -2804,17 +2174,7 @@
           "used_l": 491
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 3,
-      "x_coord": 79,
-      "y_coord": 45,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1841.35,
-      "cumulative_need_l": 2630.5,
-      "tank_sensor_confidence": 0.73,
-      "usage_sensor_confidence": 0.85,
-      "data_age_minutes": 18
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F65",
@@ -2848,17 +2208,7 @@
           "used_l": 390
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 3,
-      "x_coord": 90,
-      "y_coord": 48,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1687.46,
-      "cumulative_need_l": 1874.95,
-      "tank_sensor_confidence": 0.92,
-      "usage_sensor_confidence": 0.9,
-      "data_age_minutes": 17
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F66",
@@ -2892,17 +2242,7 @@
           "used_l": 413
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 3,
-      "x_coord": 13,
-      "y_coord": 51,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1970.96,
-      "cumulative_need_l": 2074.69,
-      "tank_sensor_confidence": 0.86,
-      "usage_sensor_confidence": 0.85,
-      "data_age_minutes": 1
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F67",
@@ -2936,17 +2276,7 @@
           "used_l": 413
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 3,
-      "x_coord": 36,
-      "y_coord": 45,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1592.15,
-      "cumulative_need_l": 1990.19,
-      "tank_sensor_confidence": 0.86,
-      "usage_sensor_confidence": 0.95,
-      "data_age_minutes": 38
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F68",
@@ -2980,17 +2310,7 @@
           "used_l": 386
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 3,
-      "x_coord": 59,
-      "y_coord": 48,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2602.33,
-      "cumulative_need_l": 2739.29,
-      "tank_sensor_confidence": 0.74,
-      "usage_sensor_confidence": 0.82,
-      "data_age_minutes": 3
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F69",
@@ -3024,17 +2344,7 @@
           "used_l": 915
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 3,
-      "x_coord": 70,
-      "y_coord": 51,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2662.54,
-      "cumulative_need_l": 3328.17,
-      "tank_sensor_confidence": 0.9,
-      "usage_sensor_confidence": 0.91,
-      "data_age_minutes": 23
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F70",
@@ -3068,17 +2378,7 @@
           "used_l": 151
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 3,
-      "x_coord": 93,
-      "y_coord": 45,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2969.89,
-      "cumulative_need_l": 3126.2,
-      "tank_sensor_confidence": 0.98,
-      "usage_sensor_confidence": 0.93,
-      "data_age_minutes": 16
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F71",
@@ -3112,17 +2412,7 @@
           "used_l": 190
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 3,
-      "x_coord": 16,
-      "y_coord": 48,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2615.86,
-      "cumulative_need_l": 3269.83,
-      "tank_sensor_confidence": 0.96,
-      "usage_sensor_confidence": 0.76,
-      "data_age_minutes": 22
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F72",
@@ -3156,17 +2446,7 @@
           "used_l": 356
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 3,
-      "x_coord": 39,
-      "y_coord": 51,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2973.56,
-      "cumulative_need_l": 3130.06,
-      "tank_sensor_confidence": 0.93,
-      "usage_sensor_confidence": 0.96,
-      "data_age_minutes": 16
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F73",
@@ -3200,17 +2480,7 @@
           "used_l": 682
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 3,
-      "x_coord": 50,
-      "y_coord": 45,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1577.5,
-      "cumulative_need_l": 2253.57,
-      "tank_sensor_confidence": 0.81,
-      "usage_sensor_confidence": 0.76,
-      "data_age_minutes": 31
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F74",
@@ -3244,17 +2514,7 @@
           "used_l": 699
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 3,
-      "x_coord": 73,
-      "y_coord": 48,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2069.23,
-      "cumulative_need_l": 2178.14,
-      "tank_sensor_confidence": 0.8,
-      "usage_sensor_confidence": 0.95,
-      "data_age_minutes": 15
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F75",
@@ -3288,17 +2548,7 @@
           "used_l": 283
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 3,
-      "x_coord": 96,
-      "y_coord": 51,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1743.18,
-      "cumulative_need_l": 2178.97,
-      "tank_sensor_confidence": 0.82,
-      "usage_sensor_confidence": 0.82,
-      "data_age_minutes": 5
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F76",
@@ -3332,17 +2582,7 @@
           "used_l": 299
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 3,
-      "x_coord": 19,
-      "y_coord": 45,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 3099.34,
-      "cumulative_need_l": 3443.71,
-      "tank_sensor_confidence": 0.8,
-      "usage_sensor_confidence": 0.87,
-      "data_age_minutes": 44
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F77",
@@ -3376,17 +2616,7 @@
           "used_l": 746
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 3,
-      "x_coord": 30,
-      "y_coord": 48,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 3467.95,
-      "cumulative_need_l": 3467.95,
-      "tank_sensor_confidence": 0.8,
-      "usage_sensor_confidence": 0.76,
-      "data_age_minutes": 17
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F78",
@@ -3420,17 +2650,7 @@
           "used_l": 844
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 3,
-      "x_coord": 53,
-      "y_coord": 51,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1893.21,
-      "cumulative_need_l": 2103.57,
-      "tank_sensor_confidence": 0.71,
-      "usage_sensor_confidence": 0.89,
-      "data_age_minutes": 23
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F79",
@@ -3464,17 +2684,7 @@
           "used_l": 169
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 3,
-      "x_coord": 76,
-      "y_coord": 45,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2734.68,
-      "cumulative_need_l": 3038.53,
-      "tank_sensor_confidence": 0.83,
-      "usage_sensor_confidence": 0.99,
-      "data_age_minutes": 8
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F80",
@@ -3508,17 +2718,7 @@
           "used_l": 716
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 3,
-      "x_coord": 99,
-      "y_coord": 48,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2454.83,
-      "cumulative_need_l": 2454.83,
-      "tank_sensor_confidence": 0.76,
-      "usage_sensor_confidence": 0.76,
-      "data_age_minutes": 28
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F81",
@@ -3552,17 +2752,7 @@
           "used_l": 930
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 3,
-      "x_coord": 10,
-      "y_coord": 51,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1802.88,
-      "cumulative_need_l": 1802.88,
-      "tank_sensor_confidence": 0.9,
-      "usage_sensor_confidence": 0.98,
-      "data_age_minutes": 43
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F82",
@@ -3596,17 +2786,7 @@
           "used_l": 704
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 3,
-      "x_coord": 33,
-      "y_coord": 45,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2028.21,
-      "cumulative_need_l": 2134.96,
-      "tank_sensor_confidence": 0.72,
-      "usage_sensor_confidence": 0.91,
-      "data_age_minutes": 22
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F83",
@@ -3640,17 +2820,7 @@
           "used_l": 502
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 3,
-      "x_coord": 56,
-      "y_coord": 48,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2001.55,
-      "cumulative_need_l": 2859.36,
-      "tank_sensor_confidence": 0.91,
-      "usage_sensor_confidence": 0.82,
-      "data_age_minutes": 20
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F84",
@@ -3684,17 +2854,7 @@
           "used_l": 784
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 3,
-      "x_coord": 79,
-      "y_coord": 51,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2640.35,
-      "cumulative_need_l": 2933.72,
-      "tank_sensor_confidence": 0.82,
-      "usage_sensor_confidence": 0.82,
-      "data_age_minutes": 9
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F85",
@@ -3728,17 +2888,7 @@
           "used_l": 1113
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 3,
-      "x_coord": 90,
-      "y_coord": 45,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2019.82,
-      "cumulative_need_l": 2126.13,
-      "tank_sensor_confidence": 0.9,
-      "usage_sensor_confidence": 0.97,
-      "data_age_minutes": 40
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F86",
@@ -3772,17 +2922,7 @@
           "used_l": 594
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 3,
-      "x_coord": 13,
-      "y_coord": 48,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2629.11,
-      "cumulative_need_l": 2767.48,
-      "tank_sensor_confidence": 0.86,
-      "usage_sensor_confidence": 0.75,
-      "data_age_minutes": 19
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F87",
@@ -3816,17 +2956,7 @@
           "used_l": 792
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 3,
-      "x_coord": 36,
-      "y_coord": 51,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2157.31,
-      "cumulative_need_l": 2157.31,
-      "tank_sensor_confidence": 0.88,
-      "usage_sensor_confidence": 0.83,
-      "data_age_minutes": 29
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F88",
@@ -3860,17 +2990,7 @@
           "used_l": 996
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 3,
-      "x_coord": 59,
-      "y_coord": 45,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2041.34,
-      "cumulative_need_l": 2551.67,
-      "tank_sensor_confidence": 0.85,
-      "usage_sensor_confidence": 0.94,
-      "data_age_minutes": 11
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F89",
@@ -3904,17 +3024,7 @@
           "used_l": 677
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 3,
-      "x_coord": 70,
-      "y_coord": 48,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2628.05,
-      "cumulative_need_l": 2920.05,
-      "tank_sensor_confidence": 0.85,
-      "usage_sensor_confidence": 0.9,
-      "data_age_minutes": 22
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F90",
@@ -3948,17 +3058,7 @@
           "used_l": 867
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 3,
-      "x_coord": 93,
-      "y_coord": 51,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1567.01,
-      "cumulative_need_l": 1958.76,
-      "tank_sensor_confidence": 0.9,
-      "usage_sensor_confidence": 0.8,
-      "data_age_minutes": 13
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F91",
@@ -3992,17 +3092,7 @@
           "used_l": 348
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 3,
-      "x_coord": 16,
-      "y_coord": 45,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1435.35,
-      "cumulative_need_l": 2050.5,
-      "tank_sensor_confidence": 0.77,
-      "usage_sensor_confidence": 0.86,
-      "data_age_minutes": 5
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F92",
@@ -4036,17 +3126,7 @@
           "used_l": 489
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 3,
-      "x_coord": 39,
-      "y_coord": 48,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2574.21,
-      "cumulative_need_l": 2574.21,
-      "tank_sensor_confidence": 0.76,
-      "usage_sensor_confidence": 0.92,
-      "data_age_minutes": 32
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F93",
@@ -4080,17 +3160,7 @@
           "used_l": 289
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 3,
-      "x_coord": 50,
-      "y_coord": 51,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1983.53,
-      "cumulative_need_l": 2479.41,
-      "tank_sensor_confidence": 0.89,
-      "usage_sensor_confidence": 0.75,
-      "data_age_minutes": 7
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F94",
@@ -4124,17 +3194,7 @@
           "used_l": 621
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 3,
-      "x_coord": 73,
-      "y_coord": 45,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2498.65,
-      "cumulative_need_l": 3123.31,
-      "tank_sensor_confidence": 0.75,
-      "usage_sensor_confidence": 0.98,
-      "data_age_minutes": 34
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F95",
@@ -4168,17 +3228,7 @@
           "used_l": 632
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 3,
-      "x_coord": 96,
-      "y_coord": 48,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2589.73,
-      "cumulative_need_l": 2589.73,
-      "tank_sensor_confidence": 0.77,
-      "usage_sensor_confidence": 0.95,
-      "data_age_minutes": 30
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F96",
@@ -4212,17 +3262,7 @@
           "used_l": 371
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 3,
-      "x_coord": 19,
-      "y_coord": 51,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1925.35,
-      "cumulative_need_l": 2026.68,
-      "tank_sensor_confidence": 0.89,
-      "usage_sensor_confidence": 0.99,
-      "data_age_minutes": 39
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F97",
@@ -4256,17 +3296,7 @@
           "used_l": 749
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 3,
-      "x_coord": 30,
-      "y_coord": 45,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2222.44,
-      "cumulative_need_l": 2339.41,
-      "tank_sensor_confidence": 0.88,
-      "usage_sensor_confidence": 0.92,
-      "data_age_minutes": 33
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F98",
@@ -4300,17 +3330,7 @@
           "used_l": 573
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 3,
-      "x_coord": 53,
-      "y_coord": 48,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2525.46,
-      "cumulative_need_l": 2525.46,
-      "tank_sensor_confidence": 0.83,
-      "usage_sensor_confidence": 0.79,
-      "data_age_minutes": 31
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F99",
@@ -4344,17 +3364,7 @@
           "used_l": 352
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 3,
-      "x_coord": 76,
-      "y_coord": 51,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2052.1,
-      "cumulative_need_l": 2565.12,
-      "tank_sensor_confidence": 0.94,
-      "usage_sensor_confidence": 0.82,
-      "data_age_minutes": 34
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F100",
@@ -4388,17 +3398,7 @@
           "used_l": 172
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 3,
-      "x_coord": 99,
-      "y_coord": 45,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2099.05,
-      "cumulative_need_l": 2623.81,
-      "tank_sensor_confidence": 0.78,
-      "usage_sensor_confidence": 0.77,
-      "data_age_minutes": 19
+      "sub_tank_id": "T5"
     },
     {
       "flat_id": "F101",
@@ -4432,17 +3432,7 @@
           "used_l": 169
         }
       ],
-      "sub_tank_id": "T1",
-      "block": "A",
-      "floor": 3,
-      "x_coord": 10,
-      "y_coord": 48,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1978.78,
-      "cumulative_need_l": 2198.64,
-      "tank_sensor_confidence": 0.79,
-      "usage_sensor_confidence": 0.88,
-      "data_age_minutes": 9
+      "sub_tank_id": "T1"
     },
     {
       "flat_id": "F102",
@@ -4476,17 +3466,7 @@
           "used_l": 558
         }
       ],
-      "sub_tank_id": "T2",
-      "block": "B",
-      "floor": 3,
-      "x_coord": 33,
-      "y_coord": 51,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1953.59,
-      "cumulative_need_l": 2056.41,
-      "tank_sensor_confidence": 0.9,
-      "usage_sensor_confidence": 0.92,
-      "data_age_minutes": 5
+      "sub_tank_id": "T2"
     },
     {
       "flat_id": "F103",
@@ -4520,17 +3500,7 @@
           "used_l": 999
         }
       ],
-      "sub_tank_id": "T3",
-      "block": "C",
-      "floor": 3,
-      "x_coord": 56,
-      "y_coord": 45,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 2254.75,
-      "cumulative_need_l": 2505.28,
-      "tank_sensor_confidence": 0.86,
-      "usage_sensor_confidence": 0.85,
-      "data_age_minutes": 14
+      "sub_tank_id": "T3"
     },
     {
       "flat_id": "F104",
@@ -4564,17 +3534,7 @@
           "used_l": 623
         }
       ],
-      "sub_tank_id": "T4",
-      "block": "D",
-      "floor": 3,
-      "x_coord": 79,
-      "y_coord": 48,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 3055.11,
-      "cumulative_need_l": 3215.91,
-      "tank_sensor_confidence": 0.96,
-      "usage_sensor_confidence": 0.89,
-      "data_age_minutes": 45
+      "sub_tank_id": "T4"
     },
     {
       "flat_id": "F105",
@@ -4608,25 +3568,13 @@
           "used_l": 878
         }
       ],
-      "sub_tank_id": "T5",
-      "block": "E",
-      "floor": 4,
-      "x_coord": 90,
-      "y_coord": 66,
-      "anomaly_triggered": false,
-      "cumulative_allocated_l": 1833.2,
-      "cumulative_need_l": 1833.2,
-      "tank_sensor_confidence": 0.81,
-      "usage_sensor_confidence": 0.75,
-      "data_age_minutes": 23
+      "sub_tank_id": "T5"
     }
   ],
   "system_state": {
     "available_supply_l": 28000,
     "capacity_l": 50600,
-    "status": "normal",
-    "refill_delay_hours": 24,
-    "predicted_supply_uncertainty": 0.05
+    "status": "normal"
   },
   "sub_tanks": [
     {

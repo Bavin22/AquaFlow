@@ -95,6 +95,8 @@ COMBINED_DEPENDENTS_BONUS = 10
 LARGE_HOUSEHOLD_BONUS = 3
 LARGE_HOUSEHOLD_THRESHOLD = 6
 MEDICAL_POINTS = 1000
+EMERGENCY_POINTS = 1000  # approved emergency requests get the same dominant
+                          # override as medical_flag - see compute_vulnerability_score
 
 SURVIVAL_L_PER_PERSON = 10  # emergency per-person minimum, in litres/day.
                              # WHO/Sphere humanitarian standards commonly
@@ -105,6 +107,83 @@ SURVIVAL_FLOOR_PCT_OF_NEED = 0.15  # the floor also scales with 15% of a
                              # flat's own need, so larger households or
                              # higher-need flats get more than the flat
                              # per-person minimum alone would give them.
+
+# ---------------------------------------------------------------------------
+# RUNTIME CONFIG - lets an admin UI tune the constants above without
+# redeploying code. DEFAULT_CONFIG is the single source of truth for what's
+# tunable and what it starts at (the exact, verified values above). set_config
+# only ever overwrites these same module-level names - every function below
+# still just reads ELDERLY_POINTS etc. directly, so this cannot change WHAT
+# the algorithm does, only the calibration numbers it uses. Bounds exist so a
+# bad admin input (negative, wrong type, wildly out of range) can't silently
+# break conservation or re-open the priority-inversion bug fixed earlier
+# (e.g. MEDICAL_POINTS can't be dragged low enough for elderly/children
+# points to out-rank it, since MEDICAL_POINTS has a high floor).
+# ---------------------------------------------------------------------------
+
+DEFAULT_CONFIG = {
+    "ELDERLY_POINTS": 8,
+    "CHILD_POINTS": 5,
+    "COMBINED_DEPENDENTS_BONUS": 10,
+    "LARGE_HOUSEHOLD_BONUS": 3,
+    "LARGE_HOUSEHOLD_THRESHOLD": 6,
+    "MEDICAL_POINTS": 1000,
+    "EMERGENCY_POINTS": 1000,
+    "SURVIVAL_L_PER_PERSON": 10,
+    "SURVIVAL_FLOOR_PCT_OF_NEED": 0.15,
+    "FAIR_SHARE_PER_PERSON_L": 400,
+}
+
+# (min, max) sanity bounds per key - sanity-checked, not perfectly principled;
+# they exist to catch typos/extremes, not to encode a "correct" range.
+_CONFIG_BOUNDS = {
+    "ELDERLY_POINTS": (0, 100),
+    "CHILD_POINTS": (0, 100),
+    "COMBINED_DEPENDENTS_BONUS": (0, 200),
+    "LARGE_HOUSEHOLD_BONUS": (0, 200),
+    "LARGE_HOUSEHOLD_THRESHOLD": (1, 20),
+    "MEDICAL_POINTS": (200, 100000),  # floor of 200 keeps it well above any
+                                       # realistic elderly/children/household
+                                       # combination so medical stays dominant
+    "EMERGENCY_POINTS": (200, 100000),
+    "SURVIVAL_L_PER_PERSON": (0, 200),
+    "SURVIVAL_FLOOR_PCT_OF_NEED": (0.0, 1.0),
+    "FAIR_SHARE_PER_PERSON_L": (10, 5000),
+}
+
+
+def get_config() -> dict:
+    """Current live values of every tunable constant, by name."""
+    return {key: globals()[key] for key in DEFAULT_CONFIG}
+
+
+def set_config(overrides: dict) -> dict:
+    """
+    Applies validated overrides on top of current config and returns the
+    resulting full config. Unknown keys are ignored; out-of-bounds or
+    wrong-type values raise ValueError naming the offending key, so the
+    API layer can return a clear 400 instead of corrupting the algorithm.
+    """
+    current = get_config()
+    for key, value in overrides.items():
+        if key not in DEFAULT_CONFIG:
+            continue
+        if not isinstance(value, (int, float)) or isinstance(value, bool):
+            raise ValueError(f"{key} must be a number")
+        lo, hi = _CONFIG_BOUNDS[key]
+        if not (lo <= value <= hi):
+            raise ValueError(f"{key} must be between {lo} and {hi}")
+        current[key] = value
+
+    for key, value in current.items():
+        globals()[key] = value
+    return get_config()
+
+
+def reset_config() -> dict:
+    """Restores every tunable constant to its verified default."""
+    return set_config(dict(DEFAULT_CONFIG))
+
 
 
 def compute_need(flat: dict) -> float:
@@ -195,6 +274,13 @@ def compute_vulnerability_score(flat: dict) -> int:
     elif flat.get("medical_flag"):
         score += MEDICAL_POINTS
 
+    if flat.get("emergency_active"):
+        # An admin/manager-approved emergency request gets the same
+        # dominant override as medical_flag, applied ONLY for the cycle
+        # it was approved for (see main.py: flats are marked in-memory,
+        # never persisted, and the request is marked fulfilled after).
+        score += EMERGENCY_POINTS
+
     elderly = flat.get("elderly_count", 0)
     children = flat.get("children_count", 0)
     score += elderly * ELDERLY_POINTS
@@ -218,6 +304,8 @@ def describe_vulnerability(flat: dict) -> str:
             parts.append(f"{medical_count} medical household{'s' if medical_count != 1 else ''}")
     elif flat.get("medical_flag"):
         parts.append("medical need")
+    if flat.get("emergency_active"):
+        parts.append("approved emergency request")
     elderly = flat.get("elderly_count", 0)
     children = flat.get("children_count", 0)
     if elderly >= 1:

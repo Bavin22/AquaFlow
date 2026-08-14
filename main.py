@@ -413,7 +413,11 @@ def create_emergency_request(payload: dict):
         "resolved_by": None,
     }
     result = db.emergency_requests.insert_one(doc)
-    return {**{k: v for k, v in doc.items()}, "request_id": str(result.inserted_id)}
+
+    return {
+        **_no_id(doc),
+        "request_id": str(result.inserted_id)
+    }
 
 
 @app.get("/emergency-requests")

@@ -3572,9 +3572,9 @@
     }
   ],
   "system_state": {
-    "available_supply_l": 28000,
+    "available_supply_l": 5000,
     "capacity_l": 50600,
-    "status": "normal"
+    "status": "crisis"
   },
   "sub_tanks": [
     {

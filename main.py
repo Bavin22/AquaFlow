@@ -298,26 +298,172 @@ def reset_config_endpoint(_auth=Depends(require_role(["admin"]))):
 
 
 # ---------------------------------------------------------------------------
+# Add water to master tank
+# ---------------------------------------------------------------------------
+
+@app.post("/water/add")
+def add_water(
+    payload: dict,
+    _auth=Depends(require_role(["admin"]))
+):
+    amount = payload.get("amount_l")
+
+    if amount is None:
+        raise HTTPException(
+            status_code=400,
+            detail="amount_l is required"
+        )
+
+    try:
+        amount = float(amount)
+    except (TypeError, ValueError):
+        raise HTTPException(
+            status_code=400,
+            detail="amount_l must be a number"
+        )
+
+    if amount <= 0:
+        raise HTTPException(
+            status_code=400,
+            detail="Water amount must be greater than 0"
+        )
+
+    state = db.system_state.find_one({})
+
+    if not state:
+        raise HTTPException(
+            status_code=404,
+            detail="system_state not seeded yet"
+        )
+
+    current_supply = float(
+        state.get("available_supply_l", 0)
+    )
+
+    capacity = float(
+        state.get("capacity_l", 0)
+    )
+
+    # Add water without exceeding tank capacity
+    new_supply = min(
+        capacity,
+        current_supply + amount
+    )
+
+    # Automatically determine status
+    if new_supply <= capacity * 0.50:
+        status = "crisis"
+    else:
+        status = "normal"
+
+    db.system_state.update_one(
+        {},
+        {
+            "$set": {
+                "available_supply_l": round(new_supply, 2),
+                "status": status
+            }
+        }
+    )
+
+    return _no_id(
+        db.system_state.find_one({})
+    )
+
+# ---------------------------------------------------------------------------
 # Allocation
 # ---------------------------------------------------------------------------
 
 @app.post("/allocate")
 def allocate():
     _apply_live_config()
+
     flats = [_no_id(f) for f in db.flats.find({})]
     system_state = _no_id(db.system_state.find_one({}))
 
     if not flats or not system_state:
-        raise HTTPException(status_code=404, detail="Data not seeded yet — run seed.py first")
+        raise HTTPException(
+            status_code=404,
+            detail="Data not seeded yet — run seed.py first"
+        )
 
+    # Apply approved emergency requests
     approved = _apply_approved_emergencies(flats)
+
+    # Run allocation
     result = run_allocation(flats, system_state)
 
+    # =====================================================
+    # UPDATE MASTER WATER SUPPLY
+    # =====================================================
+
+    allocated = result.get("total_allocated_l", 0)
+
+    remaining_supply = max(
+        0,
+        system_state["available_supply_l"] - allocated
+    )
+
+    # =====================================================
+    # AUTOMATICALLY DETERMINE CRISIS STATUS
+    # =====================================================
+
+    if remaining_supply <= system_state["capacity_l"] * 0.50:
+        status = "crisis"
+    else:
+        status = "normal"
+
+    # Save updated supply + status
+    db.system_state.update_one(
+        {},
+        {
+            "$set": {
+                "available_supply_l": remaining_supply,
+                "status": status
+            }
+        }
+    )
+
+    # =====================================================
+    # SAVE ALLOCATION LOG
+    # =====================================================
+
     db.allocation_log.delete_many({})
+
     for entry in result["allocations"]:
         db.allocation_log.insert_one(dict(entry))
+    # Update flat tank levels with allocated water
+    for entry in result["allocations"]:
+        flat_id = entry["flat_id"]
+        allocated_l = entry.get("allocated_l", 0)
 
+        flat = db.flats.find_one({"flat_id": flat_id})
+
+        if flat and allocated_l > 0:
+            capacity = flat.get("tank_capacity_l", 0)
+            current_pct = flat.get("tank_level_pct", 0)
+
+            current_l = (current_pct / 100) * capacity
+            new_l = min(capacity, current_l + allocated_l)
+
+            new_pct = (new_l / capacity) * 100 if capacity > 0 else 0
+
+            db.flats.update_one(
+                {"flat_id": flat_id},
+                {
+                    "$set": {
+                        "tank_level_pct": round(new_pct, 2)
+                    }
+                }
+            )
+
+    # Fulfill approved emergency requests
     _fulfill_emergencies(approved)
+
+    # Return updated supply/status to frontend
+    result["remaining_supply_l"] = remaining_supply
+    result["status"] = status
+
     return result
 
 
@@ -330,16 +476,21 @@ def get_allocation_log(flat_id: str = None):
 
 @app.post("/crisis/trigger")
 def trigger_crisis():
-    """The 'money shot' button — halves supply and flips status to crisis."""
     state = db.system_state.find_one({})
-    if not state:
-        raise HTTPException(status_code=404, detail="system_state not seeded yet")
 
-    new_supply = round(state["available_supply_l"] / 2, 2)
+    if not state:
+        raise HTTPException(
+            status_code=404,
+            detail="system_state not seeded yet"
+        )
+
+    # Only change the mode.
+    # Do NOT change available_supply_l.
     db.system_state.update_one(
         {},
-        {"$set": {"available_supply_l": new_supply, "status": "crisis"}},
+        {"$set": {"status": "crisis"}}
     )
+
     return _no_id(db.system_state.find_one({}))
 
 
@@ -355,36 +506,158 @@ def reset_crisis():
 
 @app.post("/allocate/hierarchical")
 def allocate_hierarchical():
-    """
-    Two-level allocation: the master tank (system_state) distributes across
-    sub-tanks by their dependents' cumulative vulnerability, then each
-    sub-tank distributes what IT received across its own flats - same
-    run_allocation() logic at both levels, see engine.run_hierarchical_allocation.
-    """
     _apply_live_config()
+
     flats = [_no_id(f) for f in db.flats.find({})]
     sub_tanks = [_no_id(st) for st in db.sub_tanks.find({})]
     master_state = _no_id(db.system_state.find_one({}))
 
     if not flats or not sub_tanks or not master_state:
-        raise HTTPException(status_code=404, detail="Data not seeded yet — run seed.py first")
+        raise HTTPException(
+            status_code=404,
+            detail="Data not seeded yet — run seed.py first"
+        )
+
+    # ==========================================
+    # APPLY APPROVED EMERGENCY REQUESTS
+    # ==========================================
 
     approved = _apply_approved_emergencies(flats)
 
-    flats_by_subtank = {}
-    for f in flats:
-        flats_by_subtank.setdefault(f.get("sub_tank_id"), []).append(f)
+    # ==========================================
+    # GROUP FLATS BY SUB-TANK
+    # ==========================================
 
-    result = run_hierarchical_allocation(master_state, sub_tanks, flats_by_subtank)
+    flats_by_subtank = {}
+
+    for f in flats:
+        flats_by_subtank.setdefault(
+            f.get("sub_tank_id"), []
+        ).append(f)
+
+    # ==========================================
+    # RUN HIERARCHICAL ALLOCATION
+    # Master Tank → Sub-Tanks → Flats
+    # ==========================================
+
+    result = run_hierarchical_allocation(
+        master_state,
+        sub_tanks,
+        flats_by_subtank
+    )
+
+    # ==========================================
+    # SAVE FLAT ALLOCATIONS
+    # ==========================================
 
     db.allocation_log.delete_many({})
+
     for stid, sub_result in result["flat_allocation_by_subtank"].items():
+
         for entry in sub_result["allocations"]:
+
             entry_with_tank = dict(entry)
             entry_with_tank["sub_tank_id"] = stid
+
             db.allocation_log.insert_one(entry_with_tank)
 
+    # ==========================================
+    # UPDATE FLAT TANK LEVELS
+    # ==========================================
+
+    for stid, sub_result in result["flat_allocation_by_subtank"].items():
+
+        for entry in sub_result["allocations"]:
+
+            flat_id = entry["flat_id"]
+            allocated_l = entry.get("allocated_l", 0)
+
+            flat = db.flats.find_one({
+                "flat_id": flat_id
+            })
+
+            if flat and allocated_l > 0:
+
+                capacity = flat.get("tank_capacity_l", 0)
+                current_pct = flat.get("tank_level_pct", 0)
+
+                # Convert current percentage to litres
+                current_l = (current_pct / 100) * capacity
+
+                # Add newly allocated water
+                new_l = min(
+                    capacity,
+                    current_l + allocated_l
+                )
+
+                # Convert back to percentage
+                new_pct = (
+                    (new_l / capacity) * 100
+                    if capacity > 0
+                    else 0
+                )
+
+                # Save updated tank percentage
+                db.flats.update_one(
+                    {"flat_id": flat_id},
+                    {
+                        "$set": {
+                            "tank_level_pct": round(new_pct, 2)
+                        }
+                    }
+                )
+
+    # ==========================================
+    # REDUCE MASTER SUPPLY
+    # ==========================================
+
+    allocated = result["sub_tank_allocation"].get(
+        "total_allocated_l",
+        0
+    )
+
+    remaining_supply = max(
+        0,
+        master_state["available_supply_l"] - allocated
+    )
+
+    # ==========================================
+    # AUTOMATIC CRISIS STATUS
+    # Crisis when supply <= 50% of capacity
+    # ==========================================
+
+    if remaining_supply <= master_state["capacity_l"] * 0.50:
+        status = "crisis"
+    else:
+        status = "normal"
+
+    # ==========================================
+    # UPDATE MASTER SUPPLY + STATUS
+    # ==========================================
+
+    db.system_state.update_one(
+        {},
+        {
+            "$set": {
+                "available_supply_l": remaining_supply,
+                "status": status
+            }
+        }
+    )
+
+    # ==========================================
+    # FULFILL APPROVED EMERGENCIES
+    # ==========================================
+
     _fulfill_emergencies(approved)
+
+    # ==========================================
+    # RETURN UPDATED VALUES
+    # ==========================================
+
+    result["remaining_supply_l"] = remaining_supply
+    result["master_status"] = status
+
     return result
 
 
@@ -413,7 +686,11 @@ def create_emergency_request(payload: dict):
         "resolved_by": None,
     }
     result = db.emergency_requests.insert_one(doc)
-    return {**{k: v for k, v in doc.items()}, "request_id": str(result.inserted_id)}
+
+    return {
+        **_no_id(doc),
+        "request_id": str(result.inserted_id)
+    }
 
 
 @app.get("/emergency-requests")

@@ -1,79 +1,79 @@
 """
-Fairness-optimized water allocation engine: point-based vulnerability
-scoring + strict rank-order serving, validated via Max-Flow Min-Cut.
+    Fairness-optimized water allocation engine: point-based vulnerability
+    scoring + strict rank-order serving, validated via Max-Flow Min-Cut.
 
-Input:
-    flats: list of flat docs (matches seed_data.json):
+    Input:
+        flats: list of flat docs (matches seed_data.json):
+            {
+                "flat_id": str,
+                "medical_flag": bool,
+                "elderly_count": int,
+                "children_count": int,
+                "household_size": int,
+                "trust_score": float,    # 0.0 - 1.0, from usage_history
+                "tank_level_pct": float, # 0-100, current tank fill %
+                "tank_capacity_l": float # litres, max the flat can receive this cycle
+            }
+        system_state: {
+                "available_supply_l": float,
+                "status": "normal" | "crisis"
+            }
+
+    Output:
         {
-            "flat_id": str,
-            "medical_flag": bool,
-            "elderly_count": int,
-            "children_count": int,
-            "household_size": int,
-            "trust_score": float,    # 0.0 - 1.0, from usage_history
-            "tank_level_pct": float, # 0-100, current tank fill %
-            "tank_capacity_l": float # litres, max the flat can receive this cycle
-        }
-    system_state: {
-            "available_supply_l": float,
-            "status": "normal" | "crisis"
+            "allocations": [
+                {"flat_id": ..., "allocated_l": ..., "need_l": ...,
+                "vulnerability_score": ..., "reason": "..."}
+            ],
+            "total_allocated_l": ..., "total_need_l": ..., "supply_l": ...,
+            "bottleneck": "supply" | "none", "status": ...
         }
 
-Output:
-    {
-        "allocations": [
-            {"flat_id": ..., "allocated_l": ..., "need_l": ...,
-             "vulnerability_score": ..., "reason": "..."}
-        ],
-        "total_allocated_l": ..., "total_need_l": ..., "supply_l": ...,
-        "bottleneck": "supply" | "none", "status": ...
-    }
+    VULNERABILITY SCORE - why points instead of 3 fixed tiers:
+        A flat 3-tier system ("medical" / "vulnerable" / "standard") treats a
+        household with 1 elderly person the same as one with 4 elderly people,
+        which is hard to defend if asked directly. Instead, every household
+        gets an explicit point score:
 
-VULNERABILITY SCORE - why points instead of 3 fixed tiers:
-    A flat 3-tier system ("medical" / "vulnerable" / "standard") treats a
-    household with 1 elderly person the same as one with 4 elderly people,
-    which is hard to defend if asked directly. Instead, every household
-    gets an explicit point score:
+            medical_flag             -> +1000  (dominant override)
+            each elderly person      -> +8
+            each child                -> +5
+            elderly AND children present together -> +10 bonus
+                (a household with dependents on both ends and likely no
+                able-bodied adult free to queue for water is a distinct,
+                worse-off case than either alone)
+            household_size >= 6      -> +3 bonus
+                (more people affected by the same shortfall)
 
-        medical_flag             -> +1000  (dominant override)
-        each elderly person      -> +8
-        each child                -> +5
-        elderly AND children present together -> +10 bonus
-            (a household with dependents on both ends and likely no
-            able-bodied adult free to queue for water is a distinct,
-            worse-off case than either alone)
-        household_size >= 6      -> +3 bonus
-            (more people affected by the same shortfall)
+        This produces as many distinct priority levels as the population
+        actually contains (commonly 15-20 with a diverse dataset), rather
+        than an arbitrary fixed number chosen in advance.
 
-    This produces as many distinct priority levels as the population
-    actually contains (commonly 15-20 with a diverse dataset), rather
-    than an arbitrary fixed number chosen in advance.
+    STRICT RANK-ORDER SERVING - why, not one blended weight:
+        Flats are grouped by their EXACT score and served in strictly
+        descending score order: every flat scoring 16 is (attempted to be)
+        fully served before any flat scoring 13 gets a drop. This is what
+        makes a priority inversion structurally impossible, regardless of
+        how many score levels exist or how differently sized flats' needs
+        are - a single blended weight can't guarantee that (see project
+        history: an earlier single-weight version let small-need,
+        low-vulnerability flats out-score large-need, high-vulnerability
+        ones purely because small needs are cheap to satisfy).
 
-STRICT RANK-ORDER SERVING - why, not one blended weight:
-    Flats are grouped by their EXACT score and served in strictly
-    descending score order: every flat scoring 16 is (attempted to be)
-    fully served before any flat scoring 13 gets a drop. This is what
-    makes a priority inversion structurally impossible, regardless of
-    how many score levels exist or how differently sized flats' needs
-    are - a single blended weight can't guarantee that (see project
-    history: an earlier single-weight version let small-need,
-    low-vulnerability flats out-score large-need, high-vulnerability
-    ones purely because small needs are cheap to satisfy).
+    WITHIN A TIE (same score): trust_score and tank urgency both modulate
+        the split - a flat with a worse usage history gets a smaller share
+        (never zero), and a flat with a nearly-empty tank gets a modest edge
+        over one that's half full, even at identical vulnerability.
 
-WITHIN A TIE (same score): trust_score and tank urgency both modulate
-    the split - a flat with a worse usage history gets a smaller share
-    (never zero), and a flat with a nearly-empty tank gets a modest edge
-    over one that's half full, even at identical vulnerability.
-
-    SOURCE -> SUPPLY_HUB   capacity = system_state.available_supply_l
-    SUPPLY_HUB -> flat_i   capacity = final rank-ordered allocation_i
-    flat_i -> SINK         capacity = final rank-ordered allocation_i
-    Max-flow validates conservation; the bottleneck flag is computed
-    directly from total allocated vs total need (see run_allocation),
-    not from the min-cut, since the two capacity layers above are equal
-    by construction and make the min-cut tie-break unreliable as a
-    "was supply actually scarce" signal.
-"""
+        SOURCE -> SUPPLY_HUB   capacity = system_state.available_supply_l
+        SUPPLY_HUB -> flat_i   capacity = final rank-ordered allocation_i
+        flat_i -> SINK         capacity = final rank-ordered allocation_i
+        Max-flow validates conservation; the bottleneck flag is computed
+        directly from total allocated vs total need (see run_allocation),
+        not from the min-cut, since the two capacity layers above are equal
+        by construction and make the min-cut tie-break unreliable as a
+        "was supply actually scarce" signal.
+    """
 
 import networkx as nx
 
@@ -96,17 +96,17 @@ LARGE_HOUSEHOLD_BONUS = 3
 LARGE_HOUSEHOLD_THRESHOLD = 6
 MEDICAL_POINTS = 1000
 EMERGENCY_POINTS = 1000  # approved emergency requests get the same dominant
-                          # override as medical_flag - see compute_vulnerability_score
+                        # override as medical_flag - see compute_vulnerability_score
 
 SURVIVAL_L_PER_PERSON = 10  # emergency per-person minimum, in litres/day.
-                             # WHO/Sphere humanitarian standards commonly
-                             # cite 7.5-15L/person/day as an absolute
-                             # survival floor for drinking, cooking, and
-                             # basic hygiene; 10L is a defensible midpoint.
+                            # WHO/Sphere humanitarian standards commonly
+                            # cite 7.5-15L/person/day as an absolute
+                            # survival floor for drinking, cooking, and
+                            # basic hygiene; 10L is a defensible midpoint.
 SURVIVAL_FLOOR_PCT_OF_NEED = 0.15  # the floor also scales with 15% of a
-                             # flat's own need, so larger households or
-                             # higher-need flats get more than the flat
-                             # per-person minimum alone would give them.
+                            # flat's own need, so larger households or
+                            # higher-need flats get more than the flat
+                            # per-person minimum alone would give them.
 
 # ---------------------------------------------------------------------------
 # RUNTIME CONFIG - lets an admin UI tune the constants above without
@@ -143,8 +143,8 @@ _CONFIG_BOUNDS = {
     "LARGE_HOUSEHOLD_BONUS": (0, 200),
     "LARGE_HOUSEHOLD_THRESHOLD": (1, 20),
     "MEDICAL_POINTS": (200, 100000),  # floor of 200 keeps it well above any
-                                       # realistic elderly/children/household
-                                       # combination so medical stays dominant
+                                    # realistic elderly/children/household
+                                    # combination so medical stays dominant
     "EMERGENCY_POINTS": (200, 100000),
     "SURVIVAL_L_PER_PERSON": (0, 200),
     "SURVIVAL_FLOOR_PCT_OF_NEED": (0.0, 1.0),
@@ -528,7 +528,7 @@ def run_allocation(flats: list, system_state: dict) -> dict:
     #    impossible for anyone with need > 0. See compute_survival_floor().
     effective_needs = {f["flat_id"]: compute_effective_need(f) for f in flats}
     floors = {fid: compute_survival_floor(f, effective_needs[f["flat_id"]]) for f, fid in
-              [(f, f["flat_id"]) for f in flats]}
+            [(f, f["flat_id"]) for f in flats]}
     total_floor = sum(floors.values())
 
     if total_floor > supply:
@@ -661,7 +661,7 @@ def build_subtank_pseudo_flat(sub_tank: dict, dependent_flats: list) -> dict:
     children_total = sum(f.get("children_count", 0) for f in dependent_flats)
     household_total = sum(f.get("household_size", 0) for f in dependent_flats)
     trust_avg = (sum(f.get("trust_score", 1.0) for f in dependent_flats) / len(dependent_flats)
-                 if dependent_flats else 1.0)
+                if dependent_flats else 1.0)
 
     day_totals = {}
     for f in dependent_flats:
@@ -685,14 +685,14 @@ def build_subtank_pseudo_flat(sub_tank: dict, dependent_flats: list) -> dict:
 def run_hierarchical_allocation(master_state: dict, sub_tanks: list, flats_by_subtank: dict) -> dict:
     """
     Two-level allocation:
-      Level 1: master tank -> sub-tanks, ranked by each sub-tank's
-               cumulative dependent vulnerability.
-      Level 2: each sub-tank's OWN received water -> its dependent flats,
-               using the exact same run_allocation() as a single-tank system.
+    Level 1: master tank -> sub-tanks, ranked by each sub-tank's
+            cumulative dependent vulnerability.
+    Level 2: each sub-tank's OWN received water -> its dependent flats,
+            using the exact same run_allocation() as a single-tank system.
 
     master_state: {"available_supply_l": float, "status": "normal"|"crisis"}
     sub_tanks: [{"sub_tank_id": str, "name": str,
-                 "tank_level_pct": float, "tank_capacity_l": float}, ...]
+                "tank_level_pct": float, "tank_capacity_l": float}, ...]
     flats_by_subtank: {sub_tank_id: [flat_dict, ...], ...}
     """
     pseudo_flats = [
@@ -739,13 +739,13 @@ def run_hierarchical_allocation(master_state: dict, sub_tanks: list, flats_by_su
 if __name__ == "__main__":
     sample_flats = [
         {"flat_id": "F1", "medical_flag": True, "elderly_count": 0, "children_count": 0,
-         "household_size": 2, "trust_score": 0.9, "tank_level_pct": 10, "tank_capacity_l": 500},
+        "household_size": 2, "trust_score": 0.9, "tank_level_pct": 10, "tank_capacity_l": 500},
         {"flat_id": "F2", "medical_flag": False, "elderly_count": 2, "children_count": 3,
-         "household_size": 7, "trust_score": 0.4, "tank_level_pct": 60, "tank_capacity_l": 500},
+        "household_size": 7, "trust_score": 0.4, "tank_level_pct": 60, "tank_capacity_l": 500},
         {"flat_id": "F3", "medical_flag": False, "elderly_count": 1, "children_count": 0,
-         "household_size": 2, "trust_score": 0.8, "tank_level_pct": 80, "tank_capacity_l": 500},
+        "household_size": 2, "trust_score": 0.8, "tank_level_pct": 80, "tank_capacity_l": 500},
         {"flat_id": "F4", "medical_flag": False, "elderly_count": 0, "children_count": 0,
-         "household_size": 1, "trust_score": 0.7, "tank_level_pct": 90, "tank_capacity_l": 500},
+        "household_size": 1, "trust_score": 0.7, "tank_level_pct": 90, "tank_capacity_l": 500},
     ]
     sample_state = {"available_supply_l": 600, "status": "crisis"}
     import json

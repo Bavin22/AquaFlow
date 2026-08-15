@@ -10,14 +10,21 @@ export default function Login({ onLogin }) {
 
   async function handleSubmit(e) {
     e.preventDefault()
+
     if (!username.trim() || !password) {
       setError('Enter a username and password.')
       return
     }
+
     setError('')
     setLoading(true)
+
     try {
-      const user = await api.login(username.trim(), password)
+      const user = await api.login(
+        username.trim(),
+        password
+      )
+
       onLogin(user)
     } catch (err) {
       setError(err.message)
@@ -27,60 +34,227 @@ export default function Login({ onLogin }) {
   }
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      background: 'radial-gradient(ellipse at top, #0f171c 0%, #0a0e12 60%)',
-    }}>
-      <div style={{ width: 380, padding: '0 20px' }}>
-        <div style={{ textAlign: 'center', marginBottom: 32 }}>
-          <div style={{
-            width: 56, height: 56, margin: '0 auto 16px',
-            borderRadius: '50% 50% 50% 0', transform: 'rotate(45deg)',
-            background: 'linear-gradient(135deg, var(--accent), var(--accent-strong))',
-          }} />
-          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 26, fontWeight: 700, margin: '0 0 6px' }}>
+    <div className="login-page">
+
+      {/* =====================================================
+          BACKGROUND DECORATION
+          ===================================================== */}
+
+      <div className="login-bg-circle circle-one" />
+      <div className="login-bg-circle circle-two" />
+      <div className="login-bg-circle circle-three" />
+
+
+      {/* =====================================================
+          LOGIN CONTAINER
+          ===================================================== */}
+
+      <div className="login-container">
+
+        {/* ===================================================
+            BRAND
+            =================================================== */}
+
+        <div className="login-brand">
+
+          <div className="login-logo">
+
+            <img src="/aquaflow-logo.png" alt="AquaFlow logo"/>
+
+          </div>
+
+          <h1>
             AquaFlow
           </h1>
-          <p style={{ color: 'var(--text-secondary)', fontSize: 13.5, margin: 0 }}>
-            Fairness-verified water allocation console
+
+          <p>
+            Smart Water Allocation System
           </p>
+
         </div>
 
-        <form onSubmit={handleSubmit} className="card" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-          <Banner type="error" onClose={() => setError('')}>{error}</Banner>
 
-          <div className="field">
-            <label htmlFor="username">Username</label>
-            <input
-              id="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="admin"
-              autoFocus
-            />
+        {/* ===================================================
+            LOGIN CARD
+            =================================================== */}
+
+        <form
+          onSubmit={handleSubmit}
+          className="login-card"
+        >
+
+          <div className="login-card-header">
+
+            <h2>
+              Welcome back
+            </h2>
+
+            <p>
+              Sign in to access your AquaFlow dashboard.
+            </p>
+
           </div>
-          <div className="field">
-            <label htmlFor="password">Password</label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="••••••••"
-            />
+
+
+          {/* =================================================
+              ERROR
+              ================================================= */}
+
+          <Banner
+            type="error"
+            onClose={() => setError('')}
+          >
+            {error}
+          </Banner>
+
+
+          {/* =================================================
+              USERNAME
+              ================================================= */}
+
+          <div className="field login-field">
+
+            <label htmlFor="username">
+              Username
+            </label>
+
+            <div className="login-input-wrapper">
+
+              <span className="login-input-icon">
+                ◉
+              </span>
+
+              <input
+                id="username"
+                value={username}
+                onChange={(e) =>
+                  setUsername(e.target.value)
+                }
+                placeholder="Enter your username"
+                autoFocus
+                autoComplete="username"
+              />
+
+            </div>
+
           </div>
-          <button type="submit" className="btn primary" disabled={loading} style={{ marginTop: 4 }}>
-            {loading ? <span className="spinner" /> : 'Sign in'}
+
+
+          {/* =================================================
+              PASSWORD
+              ================================================= */}
+
+          <div className="field login-field">
+
+            <label htmlFor="password">
+              Password
+            </label>
+
+            <div className="login-input-wrapper">
+
+              <span className="login-input-icon">
+                ◆
+              </span>
+
+              <input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(e) =>
+                  setPassword(e.target.value)
+                }
+                placeholder="Enter your password"
+                autoComplete="current-password"
+              />
+
+            </div>
+
+          </div>
+
+
+          {/* =================================================
+              SIGN IN
+              ================================================= */}
+
+          <button
+            type="submit"
+            className="btn primary login-submit"
+            disabled={loading}
+          >
+            {loading ? (
+              <>
+                <span className="spinner" />
+                Signing in...
+              </>
+            ) : (
+              <>
+                Sign in
+                <span className="login-arrow">
+                  →
+                </span>
+              </>
+            )}
           </button>
+
+
+          {/* =================================================
+              SECURITY MESSAGE
+              ================================================= */}
+
+          <div className="login-security">
+
+            <span className="login-security-icon">
+              ✓
+            </span>
+
+            <span>
+              Secure access to your water management dashboard
+            </span>
+
+          </div>
+
         </form>
 
-        <p style={{ textAlign: 'center', fontSize: 11.5, color: 'var(--text-muted)', marginTop: 18, fontFamily: 'var(--font-mono)' }}>
-          admin / admin123 · manager / manager123 · f1 / password123
+
+        {/* ===================================================
+            DEMO ACCOUNTS
+            =================================================== */}
+
+        {/*<div className="login-demo">
+
+          <p className="login-demo-title">
+            DEMO ACCOUNTS
+          </p>
+
+          <div className="login-demo-list">
+
+            <span>
+              admin / admin123
+            </span>
+
+            <span>
+              manager / manager123
+            </span>
+
+            <span>
+              f1 / password123
+            </span>
+
+          </div>
+
+        </div>*/}
+
+
+        {/* ===================================================
+            FOOTER
+            =================================================== */}
+
+        <p className="login-footer">
+          AquaFlow · Fair &amp; intelligent water allocation
         </p>
+
       </div>
+
     </div>
   )
 }

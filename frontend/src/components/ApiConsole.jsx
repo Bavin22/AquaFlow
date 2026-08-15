@@ -24,6 +24,7 @@ export default function ApiConsole() {
     setBusy(true)
     setError('')
     setActiveLabel(endpoint.label)
+
     try {
       const res = await endpoint.fn()
       setResult(res)
@@ -36,43 +37,230 @@ export default function ApiConsole() {
   }
 
   return (
-    <div>
-      <div className="card" style={{ marginBottom: 16 }}>
-        <p className="card-title">API console</p>
-        <p className="card-sub">Call any endpoint directly and inspect the raw response — useful for live verification in front of judges.</p>
-        <div className="api-btn-grid">
-          {ENDPOINTS.map((ep) => (
-            <button
-              key={ep.label}
-              className={`btn sm ${activeLabel === ep.label ? 'primary' : ''}`}
-              disabled={busy}
-              onClick={() => call(ep)}
-            >
-              {ep.label}
-            </button>
-          ))}
+    <div className="api-console">
+
+      {/* =====================================================
+          HEADER
+          ===================================================== */}
+
+      <div className="api-console-header">
+
+        <div>
+
+          <p className="user-eyebrow">
+            DEVELOPER TOOLS
+          </p>
+
+          <h2>
+            API Console
+          </h2>
+
+          <p>
+            Test AquaFlow endpoints and inspect live responses.
+          </p>
+
         </div>
+
+        <div className="api-console-badge">
+          <span className="api-status-dot" />
+          LIVE API
+        </div>
+
       </div>
 
-      {error && (
-        <div className="card" style={{ borderColor: 'var(--danger)' }}>
-          <p className="card-title" style={{ color: 'var(--danger)' }}>Error</p>
-          <pre style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--danger)', margin: 0, whiteSpace: 'pre-wrap' }}>{error}</pre>
+
+      {/* =====================================================
+          ENDPOINT PANEL
+          ===================================================== */}
+
+      <div className="api-console-panel">
+
+        <div className="api-console-panel-head">
+
+          <div>
+
+            <h3>
+              Available Endpoints
+            </h3>
+
+            <p>
+              Select an endpoint to execute the request.
+            </p>
+
+          </div>
+
+          <span className="api-endpoint-count">
+            {ENDPOINTS.length} endpoints
+          </span>
+
         </div>
+
+
+        <div className="api-btn-grid">
+
+          {ENDPOINTS.map((ep) => {
+
+            const isActive =
+              activeLabel === ep.label
+
+            const isPost =
+              ep.label.startsWith('POST')
+
+            return (
+              <button
+                key={ep.label}
+                className={`api-endpoint-btn ${
+                  isActive ? 'active' : ''
+                } ${isPost ? 'post' : 'get'}`}
+                disabled={busy}
+                onClick={() => call(ep)}
+              >
+
+                <span
+                  className={`api-method ${
+                    isPost ? 'post' : 'get'
+                  }`}
+                >
+                  {isPost ? 'POST' : 'GET'}
+                </span>
+
+                <span className="api-path">
+                  {ep.label
+                    .replace('GET ', '')
+                    .replace('POST ', '')}
+                </span>
+
+                {isActive && busy && (
+                  <span className="api-spinner" />
+                )}
+
+              </button>
+            )
+          })}
+
+        </div>
+
+      </div>
+
+
+      {/* =====================================================
+          ERROR
+          ===================================================== */}
+
+      {error && (
+
+        <div className="api-response-card api-error">
+
+          <div className="api-response-header">
+
+            <div className="api-response-title">
+
+              <span className="api-response-icon error">
+                !
+              </span>
+
+              <div>
+
+                <h3>
+                  Request Failed
+                </h3>
+
+                <p>
+                  {activeLabel}
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <pre className="api-response-body error-text">
+            {error}
+          </pre>
+
+        </div>
+
       )}
 
+
+      {/* =====================================================
+          SUCCESS RESPONSE
+          ===================================================== */}
+
       {result && !error && (
-        <div className="card">
-          <p className="card-title">{activeLabel} response</p>
-          <pre style={{
-            fontFamily: 'var(--font-mono)', fontSize: 11.5, color: 'var(--text-secondary)',
-            margin: 0, whiteSpace: 'pre-wrap', maxHeight: 480, overflow: 'auto',
-            background: 'var(--bg-panel)', padding: 12, borderRadius: 'var(--radius)',
-          }}>
-            {JSON.stringify(result, null, 2)}
-          </pre>
+
+        <div className="api-response-card">
+
+          <div className="api-response-header">
+
+            <div className="api-response-title">
+
+              <span className="api-response-icon success">
+                ✓
+              </span>
+
+              <div>
+
+                <h3>
+                  API Response
+                </h3>
+
+                <p>
+                  {activeLabel}
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <span className="api-success-badge">
+              200 OK
+            </span>
+
+          </div>
+
+
+          <div className="api-json-wrapper">
+
+            <pre className="api-response-body">
+              {JSON.stringify(result, null, 2)}
+            </pre>
+
+          </div>
+
         </div>
+
       )}
+
+
+      {/* =====================================================
+          EMPTY STATE
+          ===================================================== */}
+
+      {!result && !error && !busy && (
+
+        <div className="api-empty">
+
+          <div className="api-empty-icon">
+            &lt;/&gt;
+          </div>
+
+          <h3>
+            Ready to test
+          </h3>
+
+          <p>
+            Select an endpoint above to view its
+            live response.
+          </p>
+
+        </div>
+
+      )}
+
     </div>
   )
 }

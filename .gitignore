@@ -1,17 +1,17 @@
 .env
+
 __pycache__/
 *.pyc
+
 .DS_Store
+
 venv/
 .venv/
 
-frontend/node_modules/
-frontend/package-lock.json
-frontend/package.json
-frontend/vite.config.js
-frontend/node_modules/
 node_modules/
 frontend/node_modules/
+
 frontend/dist/
+dist/
 
 .vercel/
